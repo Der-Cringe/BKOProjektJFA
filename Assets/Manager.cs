@@ -7,7 +7,7 @@ public class Manager : MonoBehaviour
 {
     
     
-    //Private
+    //  Private Section
     //  Value that Contains the curretn Dezibel Value
     //  We use this to Controll the dezibel Slider
     private int VolumeValue;
