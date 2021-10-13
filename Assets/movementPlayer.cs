@@ -6,16 +6,19 @@ public class movementPlayer : MonoBehaviour
 {
     Rigidbody2D body;
     public Animator anim;
-    public Manager Mgmt;
+    public Manager mgmt;
     public Slider PsstSlider;
 
-    private float PsstCoolDown = 5.0f;
+    private float psstCoolDown = 5.0f;
 
 
     float horizontal;
     float vertical;
 
     public float runSpeed = 1.0f;
+
+
+    private GameObject curMiniGame;
 
     void Start() {
         body = GetComponent<Rigidbody2D>();
@@ -24,9 +27,9 @@ public class movementPlayer : MonoBehaviour
     void Update() {
 
 
-        if(PsstCoolDown > 0) {
-            PsstCoolDown -= Time.deltaTime;
-            PsstSlider.value = PsstCoolDown;
+        if(psstCoolDown > 0) {
+            psstCoolDown -= Time.deltaTime;
+            PsstSlider.value = psstCoolDown;
         }
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
@@ -53,10 +56,11 @@ public class movementPlayer : MonoBehaviour
             anim.SetBool("left", false);
         } else if(Input.GetKeyDown(KeyCode.Q)) {
             //PSSST Function
-            if(PsstCoolDown <= 0) {
+            if(psstCoolDown <= 0) {
                 psstFunction();
-            }
-            
+            }   
+        }else if(Input.GetKeyDown(KeyCode.E)) {
+            startMiniGame();
         }
         
 
@@ -65,7 +69,13 @@ public class movementPlayer : MonoBehaviour
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
     private void psstFunction() {
-        this.Mgmt.removeVolumeValue(20);
-        PsstCoolDown = 5.0f;
+        this.mgmt.removeVolumeValue(20);
+        psstCoolDown = 5.0f;
+    }
+    private void startMiniGame() {
+        curMiniGame.SetActive(true);
+    }
+    public void setMiniGame(GameObject uMG) {
+        curMiniGame = uMG;
     }
 }

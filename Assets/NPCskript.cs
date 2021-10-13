@@ -6,7 +6,7 @@ public class NPCskript:MonoBehaviour {
 
     // Update is called once per frame#
     public float TIME_CONTAINER = 3.0f;
-    public Manager Mgmt;
+    public Manager mgmt;
 
     private float actionTimer;
 
@@ -27,6 +27,6 @@ public class NPCskript:MonoBehaviour {
 
     }
     void FelixPattern() {
-        this.Mgmt.AddVolumeValue(2);
+        this.mgmt.AddVolumeValue(2);
     }
 }

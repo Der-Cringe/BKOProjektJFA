@@ -11,16 +11,17 @@ public class Manager:MonoBehaviour {
     //  We use this to Controll the dezibel Slider
     private int VolumeValue;
     public Slider DezibelSlider;
-    
+    public GameObject miniGame;
 
 
     private void Start() {
         VolumeValue = 20;
+        miniGame.SetActive(false);
     }
     private void Update() {
         if(VolumeValue > DezibelSlider.maxValue) {
             VolumeValue = (int)DezibelSlider.maxValue;
-        }else if(VolumeValue < 0) {
+        } else if(VolumeValue < 0) {
             VolumeValue = 0;
         }
         setSlider();
