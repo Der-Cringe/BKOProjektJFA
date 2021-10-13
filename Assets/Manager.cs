@@ -9,9 +9,13 @@ public class Manager:MonoBehaviour {
     //  Private Section
     //  Value that Contains the curretn Dezibel Value
     //  We use this to Controll the dezibel Slider
+    private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
+
     private int VolumeValue;
+    private float day = 0.3128f;
+
     public Slider DezibelSlider;
-    
+    public Text clockText;
 
 
     private void Start() {
@@ -24,6 +28,7 @@ public class Manager:MonoBehaviour {
             VolumeValue = 0;
         }
         setSlider();
+        setTime();
     }
 
 
@@ -43,5 +48,20 @@ public class Manager:MonoBehaviour {
     }
     public int getVolumeValue() {
         return VolumeValue;
+    }
+
+    public void setTime(){
+        day += Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY;
+        //Debug.Log("Time: "+ day);
+
+        float dayNormalized = day % 1f;
+        float hoursPerDay = 24f;
+        
+        string hoursString = Mathf.Floor(dayNormalized * hoursPerDay).ToString("00");
+
+        float minutesPerHour = 60f;
+        string minutesString = Mathf.Floor(((dayNormalized* hoursPerDay) % 1f) * minutesPerHour).ToString("00");
+        
+        clockText.text = hoursString + ":" +minutesString;
     }
 }
