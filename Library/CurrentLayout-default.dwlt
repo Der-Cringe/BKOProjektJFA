@@ -220,7 +220,11 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 321}
   m_MaxSize: {x: 8002, y: 8021}
   vertical: 1
+<<<<<<< HEAD
   controlID: 97
+=======
+  controlID: 39
+>>>>>>> 1.0-Version-Felix-Psst-Button
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -496,10 +500,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 923c0000
     m_LastClickedInstanceID: 15506
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d24e0000d83b0000
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000d24e0000
+>>>>>>> 1.0-Version-Felix-Psst-Button
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -594,9 +605,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 923c0000
       m_LastClickedID: 15506
       m_ExpandedIDs: a0faffff663c00009c3c0000
+=======
+      m_SelectedIDs: 043c0000
+      m_LastClickedID: 15364
+      m_ExpandedIDs: e0e8ffff60fbffff3e3c0000863c0000
+>>>>>>> 1.0-Version-Felix-Psst-Button
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: WorldObjekts
@@ -656,9 +673,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -5.9597526, y: 3.0711567, z: -3.691995}
     speed: 2
     m_Value: {x: -5.9597526, y: 3.0711567, z: -3.691995}
+=======
+    m_Target: {x: 275.74872, y: 166.00494, z: 0}
+    speed: 2
+    m_Value: {x: 275.74872, y: 166.00494, z: 0}
+>>>>>>> 1.0-Version-Felix-Psst-Button
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -708,9 +731,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 6.0577707
     speed: 2
     m_Value: 6.0577707
+=======
+    m_Target: 321.85886
+    speed: 2
+    m_Value: 321.85886
+>>>>>>> 1.0-Version-Felix-Psst-Button
   m_Ortho:
     m_Target: 1
     speed: 2
