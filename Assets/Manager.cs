@@ -15,14 +15,14 @@ public class Manager:MonoBehaviour {
     private float day = 0.3128f;
 
     public Slider DezibelSlider;
-<<<<<<< HEAD
+
     public Text clockText;
 
-=======
-    
+
+
     private bool interaktiv;
     public GameObject interaktivObj;
->>>>>>> 1.0-Version-Felix-Tasks
+
 
     private void Start() {
         VolumeValue = 20;
@@ -58,28 +58,28 @@ public class Manager:MonoBehaviour {
     public int getVolumeValue() {
         return VolumeValue;
     }
-<<<<<<< HEAD
 
-    public void setTime(){
+    public void setTime() {
         day += Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY;
         //Debug.Log("Time: "+ day);
 
         float dayNormalized = day % 1f;
         float hoursPerDay = 24f;
-        
+
         string hoursString = Mathf.Floor(dayNormalized * hoursPerDay).ToString("00");
 
         float minutesPerHour = 60f;
-        string minutesString = Mathf.Floor(((dayNormalized* hoursPerDay) % 1f) * minutesPerHour).ToString("00");
-        
-        clockText.text = hoursString + ":" +minutesString;
-=======
+        string minutesString = Mathf.Floor(((dayNormalized * hoursPerDay) % 1f) * minutesPerHour).ToString("00");
+
+        clockText.text = hoursString + ":" + minutesString;
+
+    }
     public void interaktivSet(bool a,GameObject b) {
         interaktiv = a;
         interaktivObj = b;
     }
     public bool GetInteraktiv() {
         return interaktiv;
->>>>>>> 1.0-Version-Felix-Tasks
+
     }
-}
+};
