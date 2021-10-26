@@ -59,8 +59,8 @@ public class movementPlayer : MonoBehaviour
             if(psstCoolDown <= 0) {
                 psstFunction();
             }   
-        }else if(Input.GetKeyDown(KeyCode.E)) {
-            startMiniGame();
+        }else if(Input.GetKeyDown(KeyCode.E) && mgmt.GetInteraktiv() == true) {
+            mgmt.startQuest();
         }
         
 
@@ -72,10 +72,5 @@ public class movementPlayer : MonoBehaviour
         this.mgmt.removeVolumeValue(20);
         psstCoolDown = 5.0f;
     }
-    private void startMiniGame() {
-        curMiniGame.SetActive(true);
-    }
-    public void setMiniGame(GameObject uMG) {
-        curMiniGame = uMG;
-    }
+
 }

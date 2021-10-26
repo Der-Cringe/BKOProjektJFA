@@ -11,12 +11,12 @@ public class Manager:MonoBehaviour {
     //  We use this to Controll the dezibel Slider
     private int VolumeValue;
     public Slider DezibelSlider;
-    public GameObject miniGame;
-
+    
+    private bool interaktiv;
+    public GameObject interaktivObj;
 
     private void Start() {
         VolumeValue = 20;
-        miniGame.SetActive(false);
     }
     private void Update() {
         if(VolumeValue > DezibelSlider.maxValue) {
@@ -31,6 +31,9 @@ public class Manager:MonoBehaviour {
     void setSlider() {
         DezibelSlider.value = VolumeValue;
     }
+    public void startQuest() {
+        Debug.Log("HEHE");
+    }
 
     // Attribut Controll Methods
     public void setVolumeValue(int newVal) {
@@ -44,5 +47,12 @@ public class Manager:MonoBehaviour {
     }
     public int getVolumeValue() {
         return VolumeValue;
+    }
+    public void interaktivSet(bool a,GameObject b) {
+        interaktiv = a;
+        interaktivObj = b;
+    }
+    public bool GetInteraktiv() {
+        return interaktiv;
     }
 }
