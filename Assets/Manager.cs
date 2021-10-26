@@ -17,6 +17,9 @@ public class Manager:MonoBehaviour {
     public Slider DezibelSlider;
     public Text clockText;
 
+    private bool interaktiv;
+    public GameObject interaktivObj;
+
 
     private void Start() {
         VolumeValue = 20;
@@ -29,6 +32,9 @@ public class Manager:MonoBehaviour {
         }
         setSlider();
         setTime();
+    }
+    public void startQuest() {
+        Debug.Log("HEHE");
     }
 
 
@@ -63,5 +69,12 @@ public class Manager:MonoBehaviour {
         string minutesString = Mathf.Floor(((dayNormalized* hoursPerDay) % 1f) * minutesPerHour).ToString("00");
         
         clockText.text = hoursString + ":" +minutesString;
+    }
+    public void interaktivSet(bool a,GameObject b) {
+        interaktiv = a;
+        interaktivObj = b;
+    }
+    public bool GetInteraktiv() {
+        return interaktiv;
     }
 }

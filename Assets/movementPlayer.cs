@@ -57,8 +57,10 @@ public class movementPlayer : MonoBehaviour
                 psstFunction();
             }
             
+        } else if(Input.GetKeyDown(KeyCode.E) && Mgmt.GetInteraktiv() == true) {
+            Mgmt.startQuest();
         }
-        
+
 
     }
     private void FixedUpdate() {
