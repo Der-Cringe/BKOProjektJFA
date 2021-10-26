@@ -15,8 +15,14 @@ public class Manager:MonoBehaviour {
     private float day = 0.3128f;
 
     public Slider DezibelSlider;
+<<<<<<< HEAD
     public Text clockText;
 
+=======
+    
+    private bool interaktiv;
+    public GameObject interaktivObj;
+>>>>>>> 1.0-Version-Felix-Tasks
 
     private void Start() {
         VolumeValue = 20;
@@ -24,7 +30,7 @@ public class Manager:MonoBehaviour {
     private void Update() {
         if(VolumeValue > DezibelSlider.maxValue) {
             VolumeValue = (int)DezibelSlider.maxValue;
-        }else if(VolumeValue < 0) {
+        } else if(VolumeValue < 0) {
             VolumeValue = 0;
         }
         setSlider();
@@ -34,6 +40,9 @@ public class Manager:MonoBehaviour {
 
     void setSlider() {
         DezibelSlider.value = VolumeValue;
+    }
+    public void startQuest() {
+        Debug.Log("HEHE");
     }
 
     // Attribut Controll Methods
@@ -49,6 +58,7 @@ public class Manager:MonoBehaviour {
     public int getVolumeValue() {
         return VolumeValue;
     }
+<<<<<<< HEAD
 
     public void setTime(){
         day += Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY;
@@ -63,5 +73,13 @@ public class Manager:MonoBehaviour {
         string minutesString = Mathf.Floor(((dayNormalized* hoursPerDay) % 1f) * minutesPerHour).ToString("00");
         
         clockText.text = hoursString + ":" +minutesString;
+=======
+    public void interaktivSet(bool a,GameObject b) {
+        interaktiv = a;
+        interaktivObj = b;
+    }
+    public bool GetInteraktiv() {
+        return interaktiv;
+>>>>>>> 1.0-Version-Felix-Tasks
     }
 }

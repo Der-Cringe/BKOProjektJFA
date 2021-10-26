@@ -53,6 +53,10 @@
     <UnityVersion>2019.4.31f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\InterSkript.cs" />
+>>>>>>> 1.0-Version-Felix-Tasks
     <Compile Include="Assets\KameraSettings.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\NPCskript.cs" />
