@@ -53,12 +53,13 @@
     <UnityVersion>2019.4.31f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\InterSkript.cs" />
-    <Compile Include="Assets\KameraSettings.cs" />
-    <Compile Include="Assets\Manager.cs" />
-    <Compile Include="Assets\NPCskript.cs" />
-    <Compile Include="Assets\followTarget.cs" />
-    <Compile Include="Assets\movementPlayer.cs" />
+    <Compile Include="Assets\Skripts\InterSkript.cs" />
+    <Compile Include="Assets\Skripts\KameraSettings.cs" />
+    <Compile Include="Assets\Skripts\Manager.cs" />
+    <Compile Include="Assets\Skripts\NPCskript.cs" />
+    <Compile Include="Assets\Skripts\PlaySkript.cs" />
+    <Compile Include="Assets\Skripts\followTarget.cs" />
+    <Compile Include="Assets\Skripts\movementPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
