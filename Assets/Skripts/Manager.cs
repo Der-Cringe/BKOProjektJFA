@@ -18,7 +18,12 @@ public class Manager:MonoBehaviour {
     public Text clockText;
 
     private bool interaktiv;
-    public GameObject interaktivObj;
+    //public GameObject interaktivObj;
+    public GameObject fullInGameUi;
+
+
+    public GameObject[] mgs;
+
 
 
     private void Start() {
@@ -33,9 +38,7 @@ public class Manager:MonoBehaviour {
         setSlider();
         setTime();
     }
-    public void startQuest() {
-        Debug.Log("HEHE");
-    }
+
 
 
     void setSlider() {
@@ -72,9 +75,23 @@ public class Manager:MonoBehaviour {
     }
     public void interaktivSet(bool a,GameObject b) {
         interaktiv = a;
-        interaktivObj = b;
+      //  interaktivObj = b;
     }
     public bool GetInteraktiv() {
         return interaktiv;
+    }
+    public void startQuest() {
+        minigame();
+        
+    }
+    // NPC AKTIONS
+    public void goToTeacherTable() {
+
+    }
+    // Mini Games
+    private void minigame() {
+        fullInGameUi.SetActive(false);
+        mgs[0].SetActive(true);
+        Debug.Log("Test");
     }
 }

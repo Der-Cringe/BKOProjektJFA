@@ -12,6 +12,7 @@ public class NPCskript:MonoBehaviour {
 
     private void Start() {
         actionTimer = TIME_CONTAINER;
+        Mgmt.goToTeacherTable();
     }
     void Update() {
 
@@ -26,7 +27,7 @@ public class NPCskript:MonoBehaviour {
         }
 
     }
-    void FelixPattern() {
+    private void FelixPattern() {
         this.Mgmt.AddVolumeValue(2);
     }
 }

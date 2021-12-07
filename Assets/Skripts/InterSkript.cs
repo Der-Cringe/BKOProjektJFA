@@ -11,7 +11,7 @@ public class InterSkript:MonoBehaviour {
         DetectIfPlayerIsInRange();
     }
 
-    void DetectIfPlayerIsInRange() {
+    private void DetectIfPlayerIsInRange() {
         if(Vector2.Distance(player.transform.position,this.transform.position) < interactRange) {
             mgmt.interaktivSet(true,this.gameObject);
         } else {
