@@ -15,6 +15,8 @@ public class stdSettingMgSkript : MonoBehaviour
     //Objekt disappear Time    
     private double timeDis = 0.0f;
 
+    int rn;
+    bool clicked;
 
     private int score;
     public GameObject[] imgs;
@@ -47,7 +49,8 @@ public class stdSettingMgSkript : MonoBehaviour
                 //PictureTimer
                 if(timeDis < 0.0f) {
                     timeDis = 1.0f;
-                    int rn = Random.Range(0,imgs.Length - 1);
+                    clicked = false;
+                    rn = Random.Range(0,imgs.Length - 1);
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
@@ -62,7 +65,22 @@ public class stdSettingMgSkript : MonoBehaviour
         }
     }
 
+    public void pressInfo(int num) {
+        Debug.Log(num);
+        if(clicked == false) {
+            if(rn == num) {
+                score += 10;
+                Debug.Log("Nice");
+            }
+            clicked = true;
+        } else {
+            Debug.Log("already clicked");
+        }
+
+    }
+
     public void resetMg() {
+        clicked = false;
         startContainer.SetActive(true);
         timerStart = 3.0f;
         curImg = empty;
@@ -74,5 +92,6 @@ public class stdSettingMgSkript : MonoBehaviour
             imgs[i].SetActive(false);
         }
     }
+
 
 }
