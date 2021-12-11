@@ -23,6 +23,7 @@ public class Manager:MonoBehaviour {
 
 
     public GameObject[] mgs;
+    public int currentMg;
 
 
 
@@ -38,8 +39,6 @@ public class Manager:MonoBehaviour {
         setSlider();
         setTime();
     }
-
-
 
     void setSlider() {
         DezibelSlider.value = VolumeValue;
@@ -91,7 +90,14 @@ public class Manager:MonoBehaviour {
     // Mini Games
     private void minigame() {
         fullInGameUi.SetActive(false);
-        mgs[0].SetActive(true);
-        Debug.Log("Test");
+        //random pic
+        currentMg = Random.Range(0,mgs.Length-1);
+        mgs[currentMg].SetActive(true);
     }
+    public void sendResultsToMgmt(int uscore,stdSettingMgSkript ustd) {
+        mgs[currentMg].SetActive(false);
+        ustd.resetMg();
+
+    }
+
 }
