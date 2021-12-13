@@ -27,9 +27,16 @@ public class Manager:MonoBehaviour {
     public int currentMg;
 
 
+    public GameObject[] talkingBubbles;
+    public GameObject[] npcs;
+    private double nextDezibelUp;
+    private int randomNpcDezCount;
+
 
     private void Start() {
-        VolumeValue = 20;
+        VolumeValue         = 20;
+        nextDezibelUp       = 0;
+        randomNpcDezCount   = 0;
     }
     private void Update() {
         if(VolumeValue > DezibelSlider.maxValue) {
@@ -39,6 +46,17 @@ public class Manager:MonoBehaviour {
         }
         setSlider();
         setTime();
+
+        if(nextDezibelUp < 0.0f) {
+            nextDezibelUp = Random.Range(1,5);
+            randomNpcDezCount = Random.Range(2,6);
+
+            makeNoises(randomNpcDezCount);
+        } else {
+            nextDezibelUp -= Time.deltaTime;
+        }
+
+        
     }
 
     void setSlider() {
@@ -84,10 +102,6 @@ public class Manager:MonoBehaviour {
         minigame();
         
     }
-    // NPC AKTIONS
-    public void goToTeacherTable() {
-
-    }
     // Mini Games
     private void minigame() {
         fullInGameUi.SetActive(false);
@@ -99,6 +113,19 @@ public class Manager:MonoBehaviour {
         mgs[currentMg].SetActive(false);
         ustd.resetMg();
 
+    }
+    private void makeNoises(int count) {
+        for(int i = 0 ; i < count ;i++ ) {
+            NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
+
+            if(tmpSkript.picked == false) {
+                tmpSkript.picked = true;
+                tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
+            } else {
+                i--;
+            }
+            
+        }
     }
 
 }

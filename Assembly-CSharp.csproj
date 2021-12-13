@@ -59,6 +59,7 @@
     <Compile Include="Assets\Skripts\Manager.cs" />
     <Compile Include="Assets\Skripts\NPCskript.cs" />
     <Compile Include="Assets\Skripts\PlaySkript.cs" />
+    <Compile Include="Assets\Skripts\bubbleskript.cs" />
     <Compile Include="Assets\Skripts\followTarget.cs" />
     <Compile Include="Assets\Skripts\movementPlayer.cs" />
     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
