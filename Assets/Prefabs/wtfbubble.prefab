@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5918313131377197344}
   - component: {fileID: 1604126623514132256}
+  - component: {fileID: 7541738467904936603}
   m_Layer: 0
   m_Name: wtfbubble
   m_TagString: Untagged
@@ -81,3 +82,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7541738467904936603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915179823736365045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bc8e3ca3a624e4f8cf39fead4fab6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

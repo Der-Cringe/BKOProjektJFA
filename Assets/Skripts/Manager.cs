@@ -48,9 +48,9 @@ public class Manager:MonoBehaviour {
         setTime();
 
         if(nextDezibelUp < 0.0f) {
-            nextDezibelUp = Random.Range(1,5);
+            nextDezibelUp = Random.Range(1,8);
             randomNpcDezCount = Random.Range(2,6);
-
+            Debug.Log("tst UPDATE");
             makeNoises(randomNpcDezCount);
         } else {
             nextDezibelUp -= Time.deltaTime;
@@ -115,16 +115,14 @@ public class Manager:MonoBehaviour {
 
     }
     private void makeNoises(int count) {
-        for(int i = 0 ; i < count ;i++ ) {
+        for(int i = 0 ; i < count;i++ ) {
             NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
-
+            Debug.Log("tst FOR");
             if(tmpSkript.picked == false) {
                 tmpSkript.picked = true;
+                AddVolumeValue(20+Random.Range(0,6));
                 tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
-            } else {
-                i--;
             }
-            
         }
     }
 
