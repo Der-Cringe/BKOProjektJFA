@@ -54,15 +54,12 @@ public class stdSettingMgSkript : MonoBehaviour
                 if(timeDis < 0.0f) {
                     timeDis = nextPictureTimer;
                     clicked = false;
-<<<<<<< HEAD
                     do{
                     rn = Random.Range(0,imgs.Length);
                     }
                     while(imgs[rn] == curImg);
                     
-=======
                     rn = Random.Range(0,imgs.Length);
->>>>>>> db153e21b427c442fea6412e26b63a835767add6
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
@@ -80,7 +77,7 @@ public class stdSettingMgSkript : MonoBehaviour
     }
 
     public void setHardnessLvl(int hardnessValue){
-        nextPictureTimer -= nextPictureTimer* (hardnessValue /10);
+        nextPictureTimer -= nextPictureTimer* (hardnessValue  / 50);
     }
 
     public void pressInfo(int num) {
