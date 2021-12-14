@@ -59,26 +59,14 @@
     <Compile Include="Assets\Skripts\Manager.cs" />
     <Compile Include="Assets\Skripts\NPCskript.cs" />
     <Compile Include="Assets\Skripts\PlaySkript.cs" />
+    <Compile Include="Assets\Skripts\StartstdSettingMg.cs" />
     <Compile Include="Assets\Skripts\bubbleskript.cs" />
+    <Compile Include="Assets\Skripts\doorMinigameScript.cs" />
     <Compile Include="Assets\Skripts\followTarget.cs" />
     <Compile Include="Assets\Skripts\movementPlayer.cs" />
     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
-     <Compile Include="Assets\Skripts\BtnSendStatus.cs" />
-     <Compile Include="Assets\Skripts\InterSkript.cs" />
-     <Compile Include="Assets\Skripts\KameraSettings.cs" />
-     <Compile Include="Assets\Skripts\Manager.cs" />
-     <Compile Include="Assets\Skripts\NPCskript.cs" />
-     <Compile Include="Assets\Skripts\PlaySkript.cs" />
-     <Compile Include="Assets\Skripts\bubbleskript.cs" />
-     <Compile Include="Assets\Skripts\doorMinigameScript.cs" />
-     <Compile Include="Assets\Skripts\followTarget.cs" />
-     <Compile Include="Assets\Skripts\movementPlayer.cs" />
-     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
->>>>>>> 36b5ed6759f4216998aee7039b7e55a96a876177
     <Reference Include="UnityEngine">
       <HintPath>F:\UnityHUB\2019.4.31f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
