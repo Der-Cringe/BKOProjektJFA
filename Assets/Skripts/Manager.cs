@@ -13,6 +13,7 @@ public class Manager:MonoBehaviour {
     private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
 
     private int VolumeValue;
+    private int knowledgeValue;
     private float day = 0.3128f;
 
     public Slider DezibelSlider;
@@ -36,7 +37,10 @@ public class Manager:MonoBehaviour {
 
 
     private void Start() {
+        knowledgeValue = 0;
+        setknowledgeSlider();
         VolumeValue         = 20;
+        setDezibelSlider();
         nextDezibelUp       = 0;
         randomNpcDezCount   = 0;
     }
@@ -46,7 +50,8 @@ public class Manager:MonoBehaviour {
         }else if(VolumeValue < 0) {
             VolumeValue = 0;
         }
-        setSlider();
+        setDezibelSlider();
+        setknowledgeSlider();
         setTime();
 
         if(nextDezibelUp < 0.0f) {
@@ -61,8 +66,12 @@ public class Manager:MonoBehaviour {
         
     }
 
-    void setSlider() {
+    void setDezibelSlider() {
         DezibelSlider.value = VolumeValue;
+    }
+
+    public void setknowledgeSlider(){
+        knowledgeSlider.value = knowledgeValue;
     }
 
     // Attribut Controll Methods
@@ -118,11 +127,15 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         //random pic
         currentMg = Random.Range(0,mgs.Length-1);
+        mgs[currentMg].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
         mgs[currentMg].SetActive(true);
     }
-    public void sendResultsToMgmt(int uscore,stdSettingMgSkript ustd) {
+    public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
-        ustd.resetMg();
+        fullInGameUi.SetActive(true);
+        // Setztung des Knowledge Wert aufbasis der Resultate des minigames
+        knowledgeValue = knowledgeValue + uscore /10;
+
 
     }
     private void makeNoises(int count) {

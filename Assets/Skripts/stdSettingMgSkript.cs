@@ -32,6 +32,8 @@ public class stdSettingMgSkript : MonoBehaviour
     public GameObject startContainer;
     public Text startCountdown;
 
+    public float nextPictureTimer = 1.0f;
+
     void Start()
     {
         resetMg();
@@ -44,14 +46,19 @@ public class stdSettingMgSkript : MonoBehaviour
             //GameTimer
             if(timer < 0.0f) {
                 //Debug.Log("Test Szenario");
-                mgmt.sendResultsToMgmt(score,this);
+                mgmt.sendResultsToMgmt(score);
+                resetMg();
             } else {
                 timer -= Time.deltaTime;
                 //PictureTimer
                 if(timeDis < 0.0f) {
-                    timeDis = 1.0f;
+                    timeDis = nextPictureTimer;
                     clicked = false;
-                    rn = Random.Range(0,imgs.Length - 1);
+                    do{
+                    rn = Random.Range(0,imgs.Length);
+                    }
+                    while(imgs[rn] == curImg);
+                    
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
@@ -66,6 +73,10 @@ public class stdSettingMgSkript : MonoBehaviour
             timerStart -= Time.deltaTime;
         }
         scoreText.text = score.ToString("0");
+    }
+
+    public void setHardnessLvl(int hardnessValue){
+        nextPictureTimer -= nextPictureTimer* (hardnessValue /10);
     }
 
     public void pressInfo(int num) {
@@ -84,6 +95,7 @@ public class stdSettingMgSkript : MonoBehaviour
 
     public void resetMg() {
         clicked = false;
+        score = 0;
         startContainer.SetActive(true);
         timerStart = 3.0f;
         curImg = empty;
