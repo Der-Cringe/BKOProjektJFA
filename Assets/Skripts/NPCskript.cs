@@ -17,7 +17,8 @@ public class NPCskript:MonoBehaviour {
         actionTimer = TIME_CONTAINER;
     }
     public void talk(GameObject bubble) {
-        Instantiate(bubble,this.transform.position,Quaternion.identity);
+        Vector2 bubblePos = new Vector2(this.transform.position.x + Random.Range(0.5f,1.5f),this.transform.position.y + Random.Range(0.5f,2.5f));
+        Instantiate(bubble,bubblePos,Quaternion.identity);
     }
 
 }
