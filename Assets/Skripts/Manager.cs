@@ -16,6 +16,8 @@ public class Manager:MonoBehaviour {
     private float day = 0.3128f;
 
     public Slider DezibelSlider;
+
+    public Slider knowledgeSlider;
     public Text clockText;
 
     private bool interaktiv;

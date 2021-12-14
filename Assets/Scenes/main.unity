@@ -1143,6 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DezibelSlider: {fileID: 1648502501}
+  knowledgeSlider: {fileID: 668189831}
   clockText: {fileID: 1000760547}
   fullInGameUi: {fileID: 2107626082}
   mgs:
