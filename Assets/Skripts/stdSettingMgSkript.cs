@@ -27,6 +27,7 @@ public class stdSettingMgSkript : MonoBehaviour
     public Manager mgmt;
 
     public Text timerTxt;
+    public Text scoreText;
 
     public GameObject startContainer;
     public Text startCountdown;
@@ -54,6 +55,7 @@ public class stdSettingMgSkript : MonoBehaviour
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
+                    
 
                 } else {
                     timeDis -= Time.deltaTime;
@@ -63,18 +65,19 @@ public class stdSettingMgSkript : MonoBehaviour
             startCountdown.text = timerStart.ToString("0");
             timerStart -= Time.deltaTime;
         }
+        scoreText.text = score.ToString("0");
     }
 
     public void pressInfo(int num) {
-        Debug.Log(num);
         if(clicked == false) {
+
+            Debug.Log(num);
+            Debug.Log(rn);
             if(rn == num) {
                 score += 10;
-                Debug.Log("Nice");
             }
             clicked = true;
         } else {
-            Debug.Log("already clicked");
         }
 
     }
