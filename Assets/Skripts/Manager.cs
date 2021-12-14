@@ -90,6 +90,15 @@ public class Manager:MonoBehaviour {
         string minutesString = Mathf.Floor(((dayNormalized* hoursPerDay) % 1f) * minutesPerHour).ToString("00");
         
         clockText.text = hoursString + ":" +minutesString;
+
+        // Wenn die Zeit 14:30 beträgt wird eine methode aufgerufen da dies das Ende des Unterrichts ist!
+        if(day >= 0.6027f){
+            gameTimeEnd();
+        }
+    }
+
+    public void gameTimeEnd(){
+        day = 0.3128f;
     }
     public void interaktivSet(bool a,GameObject b) {
         interaktiv = a;
