@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: abf2f919574f59b4d895607e0c785acc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hey Haters
+  fontNames:
+  - Hey Haters
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6194581d3525c28498f5d5aace9a77bd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
