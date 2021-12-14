@@ -51,7 +51,7 @@ public class stdSettingMgSkript : MonoBehaviour
                 if(timeDis < 0.0f) {
                     timeDis = 1.0f;
                     clicked = false;
-                    rn = Random.Range(0,imgs.Length - 1);
+                    rn = Random.Range(0,imgs.Length);
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];

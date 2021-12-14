@@ -129,7 +129,7 @@ public class Manager:MonoBehaviour {
             Debug.Log("tst FOR");
             if(tmpSkript.picked == false) {
                 tmpSkript.picked = true;
-                AddVolumeValue(20+Random.Range(0,6));
+                AddVolumeValue(Random.Range(0,6));
                 tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
             }
         }
