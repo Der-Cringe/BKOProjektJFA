@@ -192,7 +192,6 @@ public class Manager:MonoBehaviour {
     ///    Interaktiv Verwaltung 
     /// </summary>
     public void interaktivSet(bool a,GameObject b,int id) {
-        Debug.Log("DIEID DIE FICKT "+ id);
         interaktiv[id] = a;
 
     }

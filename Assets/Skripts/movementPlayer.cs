@@ -69,7 +69,6 @@ public class movementPlayer : MonoBehaviour
                 }
              }
         }
-        Debug.Log("Iam Switch : "+ Mgmt.InteraktId);
 
     }
     private void FixedUpdate() {
