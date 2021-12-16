@@ -73,6 +73,10 @@ public class Manager:MonoBehaviour {
         if(nextDezibelUp < 0.0f) {
             nextDezibelUp = Random.Range(1,8);
             randomNpcDezCount = Random.Range(2,6);
+<<<<<<< HEAD
+            //Debug.Log("tst UPDATE");
+=======
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
             makeNoises(randomNpcDezCount);
         } else {
             nextDezibelUp -= Time.deltaTime;
@@ -147,7 +151,7 @@ public class Manager:MonoBehaviour {
         return interaktiv;
     }
     public void startQuest() {
-        minigame();
+        doorMinigame();
         
     }
     // Mini Games
@@ -155,9 +159,15 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         //random pic
         currentMg = Random.Range(0,mgs.Length-1);
-        mgs[currentMg].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
-        mgs[currentMg].SetActive(true);
+        mgs[0].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
+        mgs[0].SetActive(true);
     }
+
+    private void doorMinigame() {
+        fullInGameUi.SetActive(false);
+        mgs[1].SetActive(true);
+    }
+
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
         fullInGameUi.SetActive(true);
@@ -169,6 +179,10 @@ public class Manager:MonoBehaviour {
     private void makeNoises(int count) {
         for(int i = 0 ; i < count;i++ ) {
             NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
+<<<<<<< HEAD
+            //Debug.Log("tst FOR");
+=======
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
             if(tmpSkript.picked == false) {
                 tmpSkript.picked = true;
                 AddVolumeValue(Random.Range(0,6));

@@ -15,20 +15,23 @@ public class doorMinigameScript : MonoBehaviour
     //Objekt disappear Time    
     private double timeDis = 0.0f;
 
-    int rn;
-    bool clicked;
+    public float randomWaitingTime;
+    bool canbeOpened;
 
     private int score;
     public GameObject[] imgs;
     public GameObject empty;
     public Manager mgmt;
 
-    public Text scoreText;
+    public Text infoText;
 
     public GameObject startContainer;
     public Text startCountdown;
 
-    public float nextPictureTimer = 1.0f;
+    public double uiTextTimer =  0;
+
+    public bool isWaitingOver;
+
 
     void Start()
     {
@@ -36,71 +39,101 @@ public class doorMinigameScript : MonoBehaviour
     }
     private void Update() {
         //StartTimer
-        if(timerStart < 0.0f) {
-            startContainer.SetActive(false);
-            //timerTxt.text = timer.ToString("00");
-            //GameTimer
-            if(timer < 0.0f) {
-                //Debug.Log("Test Szenario");
-                mgmt.sendResultsToMgmt(score);
-                resetMg();
-            } else {
-                timer -= Time.deltaTime;
-                //PictureTimer
-                if(timeDis < 0.0f) {
-                    timeDis = nextPictureTimer;
-                    clicked = false;
+
                   
-                    rn = Random.Range(0,imgs.Length);
-                    
-                    
-                    rn = Random.Range(0,imgs.Length);
-                    //curImg.SetActive(false);
-                    imgs[rn].SetActive(true);
-                    //curImg = imgs[rn];
+        if(timerStart < 0.0f) {
+            //Warum wird das immer wieder ausgeführt
+            startContainer.SetActive(false);
+    
+            //Text Timer für oben
+            if(uiTextTimer < 0.0f) {
+                if(infoText.text != ""){
+                    infoText.text = "";
+                }
+            } 
+            else 
+            {
+                uiTextTimer -= Time.deltaTime;
+            }
+
+            // Waiting time for the Button lock open
+            if(randomWaitingTime < 0.0f){
+                isWaitingOver = true;
+            }
+            else 
+            {
+                randomWaitingTime -= Time.deltaTime;
+            }
                     
 
-                } else {
-                    timeDis -= Time.deltaTime;
-                }
-            }
         } else {
             startCountdown.text = timerStart.ToString("0");
             timerStart -= Time.deltaTime;
         }
-        scoreText.text = score.ToString("0");
+        
     }
+
 
     public void setHardnessLvl(int hardnessValue){
        
     }
 
-    public void pressInfo(int num) {
-        if(clicked == false) {
 
+<<<<<<< HEAD
+    public void resetMg() {
+        randomWaitingTime = Random.Range(2,12);
+        timerStart = 3.0f;
+        canbeOpened = false;
+        isWaitingOver = false;
+=======
             if(rn == num) {
                 score += 10;
             }
             clicked = true;
         } else {
         }
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
+
+
+
+        
+        startContainer.SetActive(true);
+        //curImg = empty;
+        timer = timeMg;
+        this.gameObject.SetActive(false);
 
     }
 
-    public void resetMg() {
-        clicked = false;
-        score = 0;
-        startContainer.SetActive(true);
-        timerStart = 3.0f;
-        //curImg = empty;
-        timer = timeMg;
-        timeDis = 0.0f;
-        this.gameObject.SetActive(false);
 
-        for(int i = 0; i < imgs.Length;i++) {
-            imgs[i].SetActive(false);
+    public void useLockBtn(){
+        if(isWaitingOver){
+            canbeOpened = true;
+            writetoUI("Unlocked!",2f);
+        }
+        else{
+            writetoUI("Nope!",1f);
         }
     }
 
+    public void useHandleBtn(){
+        if(canbeOpened){
+            writetoUI("Congrats",3f);
+            if(uiTextTimer <= 0){
+                finishMinigame();
+            }
+        }
+        else{
+            writetoUI("Not Unlocked",3f);
+        }
+    }
+
+    public void finishMinigame(){
+
+    }
+
+    public void writetoUI(string ptext, float waittime){
+        uiTextTimer = waittime;
+        infoText.text = ptext;
+    }
 
 }
