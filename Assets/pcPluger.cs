@@ -9,14 +9,16 @@ public class pcPluger : MonoBehaviour{
     public Image img;
     private bool isDragging;
 
-    public void OnMouseDown() {
-        
-        Debug.Log("tst");
+    public LineRenderer line;
+    public DistanceJoint2D joint;
+    DistanceJoint2D rope;
+
+    bool checker;
+
+    void Start() {
+        gameObject.AddComponent<LineRenderer>();
     }
 
-    public void OnMouseUp() {
-        isDragging = false;
-    }
 
     void Update() {
         if(Input.GetMouseButtonDown(0)) {
@@ -28,12 +30,10 @@ public class pcPluger : MonoBehaviour{
 
         }
         if(isDragging) {
-            //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            //transform.Translate(mousePosition);
             Vector3 mousePos = Input.mousePosition;
             img.transform.position = mousePos;
             
         }
-
     }
+
 }
