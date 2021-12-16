@@ -63,6 +63,7 @@
      <Compile Include="Assets\Skripts\PlaySkript.cs" />
      <Compile Include="Assets\Skripts\StartstdSettingMg.cs" />
      <Compile Include="Assets\Skripts\bubbleskript.cs" />
+     <Compile Include="Assets\Skripts\doorMinigameButton.cs" />
      <Compile Include="Assets\Skripts\doorMinigameScript.cs" />
      <Compile Include="Assets\Skripts\followTarget.cs" />
      <Compile Include="Assets\Skripts\movementPlayer.cs" />
