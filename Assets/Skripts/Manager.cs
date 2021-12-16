@@ -54,8 +54,7 @@ public class Manager:MonoBehaviour {
     /// <Variablen>
     ///     Interakt Variablen 
     /// </Variablen>
-    public bool[] interaktiv = new bool[100];
-    public GameObject interaktivObj;
+    public bool[] interaktiv;
     public int InteraktId;
 
     /// <Variablen>
@@ -85,6 +84,7 @@ public class Manager:MonoBehaviour {
     ///         
     /// </summary>
     private void Start() {
+        interaktiv = new bool[20];
         knowledgeValue = 0;
         setknowledgeSlider();
         VolumeValue         = 20;

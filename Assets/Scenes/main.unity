@@ -1699,7 +1699,6 @@ MonoBehaviour:
   knowledgeSlider: {fileID: 668189831}
   clockText: {fileID: 1000760547}
   interaktiv: 
-  interaktivObj: {fileID: 0}
   InteraktId: 0
   mgs:
   - {fileID: 291945357}
