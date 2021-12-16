@@ -23,3 +23,4 @@ Erste Level:
        aber auch klicke auf schüler xy und stoppe ihn.
  6.Das Spielen gibt einem Bildung, die Menge ist abhängig davon wie gut man ein Minispiel abschließt
    -> Minigames geben Bildung aufhaltende Spiele verbrauchen einfach nur zeit und verhindern Bildung zu bekommen
+ 
