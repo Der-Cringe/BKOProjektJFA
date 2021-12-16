@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Manager:MonoBehaviour {
 
 
@@ -11,6 +12,13 @@ public class Manager:MonoBehaviour {
     //  Value that Contains the curretn Dezibel Value
     //  We use this to Controll the dezibel Slider
     private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
+
+    public Transform SpawnPointFloorPos;
+    public Transform SpawnPointClassPos;
+    public GameObject Player;
+    public GameObject StudentsClass;
+    public GameObject StudentsFloor;
+
 
     public GameObject AgainScreen;
     private int VolumeValue;
@@ -23,8 +31,9 @@ public class Manager:MonoBehaviour {
     public Text clockText;
 
     private bool interaktiv;
-    //public GameObject interaktivObj;
+    public GameObject interaktivObj;
     public GameObject fullInGameUi;
+    public int InteraktId;
 
 
     public GameObject[] mgs;
@@ -45,9 +54,13 @@ public class Manager:MonoBehaviour {
         setDezibelSlider();
         nextDezibelUp       = 0;
         randomNpcDezCount   = 0;
+        SpawnPlayer();
+        StudentsClass.SetActive(false);
+        StudentsFloor.SetActive(true);
+    
+    
     }
     private void Update() {
-        Debug.Log(score);
         if(VolumeValue > DezibelSlider.maxValue) {
             VolumeValue = (int)DezibelSlider.maxValue;
         }else if(VolumeValue < 0) {
@@ -67,6 +80,17 @@ public class Manager:MonoBehaviour {
 
         
     }
+
+
+    private void SpawnPlayer()
+    {
+        Player.transform.position = SpawnPointFloorPos.position;
+    }
+
+
+
+
+
 
     void setDezibelSlider() {
         DezibelSlider.value = VolumeValue;
@@ -114,9 +138,10 @@ public class Manager:MonoBehaviour {
         score = knowledgeValue;
         AgainScreen.SetActive(true);
     }
-    public void interaktivSet(bool a,GameObject b) {
+    public void interaktivSet(bool a,GameObject b,int id) {
         interaktiv = a;
-      //  interaktivObj = b;
+        interaktivObj = b;
+        InteraktId = id;
     }
     public bool GetInteraktiv() {
         return interaktiv;
@@ -168,5 +193,16 @@ public class Manager:MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+    public void startDoor()
+    {
+        Debug.Log("fuck");
+        //door game
+        changeToMainRoom();
+    }
+    public void changeToMainRoom()
+    {
+        Player.transform.position = SpawnPointClassPos.position;
+        StudentsClass.SetActive(true);
+        StudentsFloor.SetActive(false);
+    }
 }

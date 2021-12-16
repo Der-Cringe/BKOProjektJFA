@@ -5,6 +5,7 @@ using UnityEngine;
 public class InterSkript:MonoBehaviour {
     public GameObject player;
     public Manager mgmt;
+    public int id;
     public float interactRange;
 
     void Update() {
@@ -13,9 +14,9 @@ public class InterSkript:MonoBehaviour {
 
     private void DetectIfPlayerIsInRange() {
         if(Vector2.Distance(player.transform.position,this.transform.position) < interactRange) {
-            mgmt.interaktivSet(true,this.gameObject);
+            mgmt.interaktivSet(true,this.gameObject,id);
         } else {
-            mgmt.interaktivSet(false,this.gameObject);
+            mgmt.interaktivSet(false,this.gameObject,id);
         }
     }
 

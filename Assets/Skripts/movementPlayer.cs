@@ -58,7 +58,16 @@ public class movementPlayer : MonoBehaviour
             }
             
         } else if(Input.GetKeyDown(KeyCode.E) && Mgmt.GetInteraktiv() == true) {
-            Mgmt.startQuest();
+            switch (Mgmt.InteraktId)
+            {
+                case 0:
+                    Mgmt.startQuest();
+                    break;
+                case 1:
+                    Mgmt.startDoor();
+                    break;
+            }
+            
         }
 
 
