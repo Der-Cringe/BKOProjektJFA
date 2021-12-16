@@ -89,7 +89,6 @@ public class doorMinigameScript : MonoBehaviour
         
         startContainer.SetActive(true);
         //curImg = empty;
-        timer = timeMg;
         this.gameObject.SetActive(false);
 
     }
