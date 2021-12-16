@@ -91,7 +91,7 @@ public class doorMinigameScript : MonoBehaviour
 
     public void resetMg() {
         randomWaitingTime = Random.Range(2,12);
-        timerStart = 3.0f;
+        timerStart = 1.0f;
         canbeOpened = false;
         isWaitingOver = false;
         doorOpened = false;
@@ -108,7 +108,7 @@ public class doorMinigameScript : MonoBehaviour
     public void useLockBtn(){
         if(isWaitingOver){
             canbeOpened = true;
-            writetoUI("Unlocked!",2f);
+            writetoUI("Unlocked!",1f);
         }
         else{
             writetoUI("Nope!",1f);
@@ -117,11 +117,11 @@ public class doorMinigameScript : MonoBehaviour
 
     public void useHandleBtn(){
         if(canbeOpened){
-            writetoUI("Congrats",3f);
+            writetoUI("Congrats",1f);
             doorOpened = true;
         }
         else{
-            writetoUI("Not Unlocked",3f);
+            writetoUI("Not Unlocked",2f);
         }
     }
 
