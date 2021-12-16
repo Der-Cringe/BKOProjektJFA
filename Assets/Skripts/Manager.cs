@@ -57,6 +57,7 @@ public class Manager:MonoBehaviour {
         SpawnPlayer();
         StudentsClass.SetActive(false);
         StudentsFloor.SetActive(true);
+        doorMinigame();
     
     
     }
@@ -133,6 +134,11 @@ public class Manager:MonoBehaviour {
         }
     }
 
+        private void doorMinigame() {
+        fullInGameUi.SetActive(false);
+        mgs[1].SetActive(true);
+    }
+
     public void gameTimeEnd(){
         day = 0.3128f;
         score = knowledgeValue;
@@ -147,7 +153,7 @@ public class Manager:MonoBehaviour {
         return interaktiv;
     }
     public void startQuest() {
-        minigame();
+        doorMinigame();
         
     }
     // Mini Games
