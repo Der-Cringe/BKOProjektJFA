@@ -19,6 +19,7 @@ public class pcPluger : MonoBehaviour{
     private bool isDragging;
 
     void Start() {
+        this.gameObject.SetActive(false);
         Target = empty;
     }
 

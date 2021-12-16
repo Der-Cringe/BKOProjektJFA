@@ -32,6 +32,7 @@ public class doorMinigameScript : MonoBehaviour
 
     public bool isWaitingOver;
 
+    public Image NFC_Chip;
 
     void Start()
     {
@@ -40,7 +41,12 @@ public class doorMinigameScript : MonoBehaviour
     private void Update() {
         //StartTimer
 
-                  
+        if(this.gameObject.activeSelf) {
+            Cursor.visible = false;
+            Vector3 mousePos = Input.mousePosition;
+
+            NFC_Chip.transform.position = mousePos;
+        }
         if(timerStart < 0.0f) {
             //Warum wird das immer wieder ausgeführt
             startContainer.SetActive(false);
@@ -89,10 +95,9 @@ public class doorMinigameScript : MonoBehaviour
         canbeOpened = false;
         isWaitingOver = false;
         doorOpened = false;
+            
 
 
-
-        
         startContainer.SetActive(true);
         //curImg = empty;
         this.gameObject.SetActive(false);
