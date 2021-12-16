@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Manager:MonoBehaviour {
 
@@ -12,6 +12,7 @@ public class Manager:MonoBehaviour {
     //  We use this to Controll the dezibel Slider
     private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
 
+    public GameObject AgainScreen;
     private int VolumeValue;
     private int knowledgeValue;
     private float day = 0.3128f;
@@ -35,6 +36,7 @@ public class Manager:MonoBehaviour {
     private double nextDezibelUp;
     private int randomNpcDezCount;
 
+    private int score;
 
     private void Start() {
         knowledgeValue = 0;
@@ -45,6 +47,7 @@ public class Manager:MonoBehaviour {
         randomNpcDezCount   = 0;
     }
     private void Update() {
+        Debug.Log(score);
         if(VolumeValue > DezibelSlider.maxValue) {
             VolumeValue = (int)DezibelSlider.maxValue;
         }else if(VolumeValue < 0) {
@@ -57,7 +60,10 @@ public class Manager:MonoBehaviour {
         if(nextDezibelUp < 0.0f) {
             nextDezibelUp = Random.Range(1,8);
             randomNpcDezCount = Random.Range(2,6);
+<<<<<<< HEAD
             //Debug.Log("tst UPDATE");
+=======
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
             makeNoises(randomNpcDezCount);
         } else {
             nextDezibelUp -= Time.deltaTime;
@@ -90,7 +96,6 @@ public class Manager:MonoBehaviour {
 
     public void setTime(){
         day += Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY;
-        //Debug.Log("Time: "+ day);
 
         float dayNormalized = day % 1f;
         float hoursPerDay = 24f;
@@ -110,6 +115,8 @@ public class Manager:MonoBehaviour {
 
     public void gameTimeEnd(){
         day = 0.3128f;
+        score = knowledgeValue;
+        AgainScreen.SetActive(true);
     }
     public void interaktivSet(bool a,GameObject b) {
         interaktiv = a;
@@ -147,13 +154,33 @@ public class Manager:MonoBehaviour {
     private void makeNoises(int count) {
         for(int i = 0 ; i < count;i++ ) {
             NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
+<<<<<<< HEAD
             //Debug.Log("tst FOR");
+=======
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
             if(tmpSkript.picked == false) {
                 tmpSkript.picked = true;
                 AddVolumeValue(Random.Range(0,6));
                 tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
             }
         }
+    }
+    public int get_score()
+    {
+        return score;
+    }
+    public void add_score(int a)
+    {
+        score += a;
+    }
+    public void reset_score()
+    {
+        score = 0;
+    }
+
+    public void restart_game()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

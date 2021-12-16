@@ -79,11 +79,20 @@ public class doorMinigameScript : MonoBehaviour
     }
 
 
+<<<<<<< HEAD
     public void resetMg() {
         randomWaitingTime = Random.Range(2,12);
         timerStart = 3.0f;
         canbeOpened = false;
         isWaitingOver = false;
+=======
+            if(rn == num) {
+                score += 10;
+            }
+            clicked = true;
+        } else {
+        }
+>>>>>>> eb2c179c8de73a9828ab66b9306cceb04a4410df
 
 
 
