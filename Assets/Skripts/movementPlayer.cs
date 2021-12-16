@@ -57,19 +57,19 @@ public class movementPlayer : MonoBehaviour
                 psstFunction();
             }
             
-        } else if(Input.GetKeyDown(KeyCode.E) && Mgmt.GetInteraktiv() == true) {
-            switch (Mgmt.InteraktId)
-            {
-                case 0:
-                    Mgmt.startQuest();
-                    break;
-                case 1:
-                    Mgmt.doorMinigame();
-                    break;
+        } else if(Input.GetKeyDown(KeyCode.E)) {
+                
+            if(Mgmt.interaktiv[2]){
+                Mgmt.startQuest();
             }
-            
+            else
+             {
+                if(Mgmt.interaktiv[1]){
+                    Mgmt.doorMinigame();
+                }
+             }
         }
-
+        Debug.Log("Iam Switch : "+ Mgmt.InteraktId);
 
     }
     private void FixedUpdate() {
