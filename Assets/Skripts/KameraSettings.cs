@@ -10,7 +10,6 @@ public class KameraSettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(cam.orthographicSize);
         if(Input.GetKey(KeyCode.Z)) {
             if(cam.orthographicSize < 2) {
                 cam.orthographicSize += 1 * Time.deltaTime;

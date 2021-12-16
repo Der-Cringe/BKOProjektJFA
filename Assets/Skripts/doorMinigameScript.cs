@@ -78,8 +78,6 @@ public class doorMinigameScript : MonoBehaviour
     public void pressInfo(int num) {
         if(clicked == false) {
 
-            Debug.Log(num);
-            Debug.Log(rn);
             if(rn == num) {
                 score += 10;
             }
