@@ -64,7 +64,7 @@ public class movementPlayer : MonoBehaviour
                     Mgmt.startQuest();
                     break;
                 case 1:
-                    Mgmt.startDoor();
+                    Mgmt.doorMinigame();
                     break;
             }
             

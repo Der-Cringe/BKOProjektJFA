@@ -15,7 +15,8 @@ public class doorMinigameScript : MonoBehaviour
     private double timeDis = 0.0f;
 
     public float randomWaitingTime;
-    bool canbeOpened;
+    private bool canbeOpened;
+    private bool doorOpened;
 
     private int score;
     public GameObject[] imgs;
@@ -63,6 +64,10 @@ public class doorMinigameScript : MonoBehaviour
             {
                 randomWaitingTime -= Time.deltaTime;
             }
+
+            if(doorOpened && uiTextTimer <= 0){
+                finishMinigame();
+            }
                     
 
         } else {
@@ -83,13 +88,13 @@ public class doorMinigameScript : MonoBehaviour
         timerStart = 3.0f;
         canbeOpened = false;
         isWaitingOver = false;
+        doorOpened = false;
 
 
 
         
         startContainer.SetActive(true);
         //curImg = empty;
-        timer = timeMg;
         this.gameObject.SetActive(false);
 
     }
@@ -108,9 +113,7 @@ public class doorMinigameScript : MonoBehaviour
     public void useHandleBtn(){
         if(canbeOpened){
             writetoUI("Congrats",3f);
-            if(uiTextTimer <= 0){
-                finishMinigame();
-            }
+            doorOpened = true;
         }
         else{
             writetoUI("Not Unlocked",3f);
@@ -118,7 +121,7 @@ public class doorMinigameScript : MonoBehaviour
     }
 
     public void finishMinigame(){
-
+        mgmt.doorMinigameOver();
     }
 
     public void writetoUI(string ptext, float waittime){

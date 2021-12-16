@@ -94,7 +94,7 @@ public class Manager:MonoBehaviour {
         SpawnPlayer();
         StudentsClass.SetActive(false);
         StudentsFloor.SetActive(true);
-        doorMinigame();
+        
     
     
     }
@@ -129,7 +129,7 @@ public class Manager:MonoBehaviour {
     {
         Player.transform.position = SpawnPointFloorPos.position;
     }
-    public void startDoor() {
+    private void movetoClass() {
         Player.transform.position = SpawnPointClassPos.position;
         StudentsClass.SetActive(true);
         StudentsFloor.SetActive(false);
@@ -142,7 +142,7 @@ public class Manager:MonoBehaviour {
     ///         
     /// </summary>
     /// 
-    private void doorMinigame() {
+    public void doorMinigame() {
         fullInGameUi.SetActive(false);
         mgs[1].SetActive(true);
     }
@@ -151,10 +151,8 @@ public class Manager:MonoBehaviour {
     }
     private void minigame() {
         fullInGameUi.SetActive(false);
-        //random pic
-        currentMg = Random.Range(0,mgs.Length - 1);
-        mgs[currentMg].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
-        mgs[currentMg].SetActive(true);
+        mgs[0].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
+        mgs[0].SetActive(true);
     }
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
@@ -163,6 +161,10 @@ public class Manager:MonoBehaviour {
         knowledgeValue = knowledgeValue + uscore / 10;
 
 
+    }
+    public void doorMinigameOver(){
+        mgs[1].SetActive(false);
+        movetoClass();
     }
 
 
