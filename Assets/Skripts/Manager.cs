@@ -54,7 +54,7 @@ public class Manager:MonoBehaviour {
     /// <Variablen>
     ///     Interakt Variablen 
     /// </Variablen>
-    private bool interaktiv;
+    public bool[] interaktiv = new bool[100];
     public GameObject interaktivObj;
     public int InteraktId;
 
@@ -95,7 +95,7 @@ public class Manager:MonoBehaviour {
         StudentsClass.SetActive(false);
         StudentsFloor.SetActive(true);
         
-    
+        
     
     }
     private void Update() {
@@ -147,7 +147,7 @@ public class Manager:MonoBehaviour {
         mgs[1].SetActive(true);
     }
     public void startQuest() {
-        doorMinigame();
+        minigame();
     }
     private void minigame() {
         fullInGameUi.SetActive(false);
@@ -165,6 +165,7 @@ public class Manager:MonoBehaviour {
     public void doorMinigameOver(){
         mgs[1].SetActive(false);
         movetoClass();
+        fullInGameUi.SetActive(true);
     }
 
 
@@ -191,13 +192,11 @@ public class Manager:MonoBehaviour {
     ///    Interaktiv Verwaltung 
     /// </summary>
     public void interaktivSet(bool a,GameObject b,int id) {
-        interaktiv = a;
-        interaktivObj = b;
-        InteraktId = id;
+        Debug.Log("DIEID DIE FICKT "+ id);
+        interaktiv[id] = a;
+
     }
-    public bool GetInteraktiv() {
-        return interaktiv;
-    }
+
 
     /// <summary>
     ///     Zeit Funktionen
