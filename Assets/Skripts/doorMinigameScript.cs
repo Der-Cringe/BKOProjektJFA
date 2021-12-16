@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class doorMinigameScript : MonoBehaviour
 {
     //zeit in sec
-    //Start Timer
+    //Start Timer : 3 2 1 Los
     private double timerStart;
-    //Generall Time
-    public double timeMg;
-    private double timer;
+
+
     //Objekt disappear Time    
     private double timeDis = 0.0f;
 

@@ -1608,17 +1608,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40af2188ed9cdee4685f1ccb18cf7b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 89961888}
   SpawnPointFloorPos: {fileID: 70705090}
   SpawnPointClassPos: {fileID: 702300519}
-  Player: {fileID: 89961888}
   StudentsClass: {fileID: 1982583328}
   StudentsFloor: {fileID: 465653522}
   AgainScreen: {fileID: 1997420262}
+  fullInGameUi: {fileID: 2107626082}
   DezibelSlider: {fileID: 1648502501}
   knowledgeSlider: {fileID: 668189831}
   clockText: {fileID: 1000760547}
   interaktivObj: {fileID: 0}
-  fullInGameUi: {fileID: 2107626082}
   InteraktId: 0
   mgs:
   - {fileID: 291945357}
@@ -5410,7 +5410,6 @@ GameObject:
   - component: {fileID: 1203705785}
   - component: {fileID: 1203705784}
   - component: {fileID: 1203705783}
-  - component: {fileID: 1203705782}
   m_Layer: 5
   m_Name: lockBtn
   m_TagString: Untagged
@@ -5437,20 +5436,6 @@ RectTransform:
   m_AnchoredPosition: {x: -260, y: -141}
   m_SizeDelta: {x: 199.54462, y: 199.5224}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1203705782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203705780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad9460e722d46c4587d3b49f3b433f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnTarget: {fileID: 37957548}
-  ID: 5
 --- !u!114 &1203705783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5494,8 +5479,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1203705782}
-        m_MethodName: openButtonMethod
+      - m_Target: {fileID: 37957548}
+        m_MethodName: useLockBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8346,7 +8331,6 @@ GameObject:
   - component: {fileID: 1782600216}
   - component: {fileID: 1782600215}
   - component: {fileID: 1782600214}
-  - component: {fileID: 1782600213}
   m_Layer: 5
   m_Name: handleBtn
   m_TagString: Untagged
@@ -8373,20 +8357,6 @@ RectTransform:
   m_AnchoredPosition: {x: 80, y: 141}
   m_SizeDelta: {x: 724.2301, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1782600213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782600211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad9460e722d46c4587d3b49f3b433f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnTarget: {fileID: 37957548}
-  ID: 6
 --- !u!114 &1782600214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8430,8 +8400,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1782600213}
-        m_MethodName: openButtonMethod
+      - m_Target: {fileID: 37957548}
+        m_MethodName: useHandleBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
