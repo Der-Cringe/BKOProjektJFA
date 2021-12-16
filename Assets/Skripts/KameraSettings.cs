@@ -11,7 +11,7 @@ public class KameraSettings : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Z)) {
-            if(cam.orthographicSize < 2) {
+            if(cam.orthographicSize < 4) {
                 cam.orthographicSize += 1 * Time.deltaTime;
             }
         } else if (Input.GetKey(KeyCode.U)) {

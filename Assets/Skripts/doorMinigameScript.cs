@@ -41,12 +41,12 @@ public class doorMinigameScript : MonoBehaviour
     private void Update() {
         //StartTimer
 
-        if(this.gameObject.activeSelf) {
-            Cursor.visible = false;
-            Vector3 mousePos = Input.mousePosition;
+        // if(this.gameObject.activeSelf) {
+        //     Cursor.visible = false;
+        //     Vector3 mousePos = Input.mousePosition;
 
-            NFC_Chip.transform.position = mousePos;
-        }
+        //     NFC_Chip.transform.position = mousePos;
+        // }
         if(timerStart < 0.0f) {
             //Warum wird das immer wieder ausgeführt
             startContainer.SetActive(false);
