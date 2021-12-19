@@ -146,6 +146,11 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         mgs[1].SetActive(true);
     }
+
+    public void quizabcMinigame() {
+        fullInGameUi.SetActive(false);
+        mgs[3].SetActive(true);
+    }
     public void startQuest() {
         minigame();
     }
@@ -165,6 +170,11 @@ public class Manager:MonoBehaviour {
     public void doorMinigameOver(){
         mgs[1].SetActive(false);
         movetoClass();
+        fullInGameUi.SetActive(true);
+    }
+     public void quizabcMinigameOver(int score){
+        mgs[3].SetActive(false);
+        knowledgeValue = knowledgeValue + score / 10;
         fullInGameUi.SetActive(true);
     }
 

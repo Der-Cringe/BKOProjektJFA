@@ -67,6 +67,11 @@ public class movementPlayer : MonoBehaviour
                 if(Mgmt.interaktiv[1]){
                     Mgmt.doorMinigame();
                 }
+                else{
+                    if(Mgmt.interaktiv[3]){
+                        Mgmt.quizabcMinigame();
+                    }
+                }
              }
         }
 
