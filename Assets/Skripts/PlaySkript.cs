@@ -7,6 +7,6 @@ using UnityEngine.SceneManagement;
 public class PlaySkript : MonoBehaviour
 {
     public void Play() {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("tutorialScene");
     }
 }
