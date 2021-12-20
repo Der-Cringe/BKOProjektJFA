@@ -14,7 +14,8 @@ public class Manager:MonoBehaviour {
     //  We use this to Controll the dezibel Slider
     private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
 
-
+    // Audio sources
+    public AudioSource Foodsteps;
 
     ///<Variablen>
     ///     Player Objekt

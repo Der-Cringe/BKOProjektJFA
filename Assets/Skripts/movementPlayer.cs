@@ -8,6 +8,8 @@ public class movementPlayer : MonoBehaviour
     public Animator anim;
     public Manager Mgmt;
     public Slider PsstSlider;
+    public AudioSource Foodsteps;
+    public AudioSource StartCountDownAudio;
 
     private float PsstCoolDown = 5.0f;
 
@@ -32,26 +34,31 @@ public class movementPlayer : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         //Action Buttons 
         if (Input.GetKeyDown(KeyCode.W)) {
+            Foodsteps.Play();
             anim.SetBool("up", true);
             anim.SetBool("down", false);
             anim.SetBool("right", false);
             anim.SetBool("left", false);
         } else if (Input.GetKeyDown(KeyCode.A)) {
+            Foodsteps.Play();
             anim.SetBool("up", false);
             anim.SetBool("down", false);
             anim.SetBool("right", false);
             anim.SetBool("left", true);
         } else if (Input.GetKeyDown(KeyCode.D)) {
+            Foodsteps.Play();
             anim.SetBool("up", false);
             anim.SetBool("down", false);
             anim.SetBool("right", true);
             anim.SetBool("left", false);
         } else if (Input.GetKeyDown(KeyCode.S)) {
+            Foodsteps.Play();
             anim.SetBool("up", false);
             anim.SetBool("down", true);
             anim.SetBool("right", false);
             anim.SetBool("left", false);
         } else if(Input.GetKeyDown(KeyCode.Q)) {
+            Foodsteps.Play();
             //PSSST Function
             if(PsstCoolDown <= 0) {
                 psstFunction();
@@ -64,9 +71,11 @@ public class movementPlayer : MonoBehaviour
                 Mgmt.doorMinigame();
                 break;
                 case 1:
+                StartCountDownAudio.Play();
                 Mgmt.startQuest(1);
                 break;
                 case 2:
+                StartCountDownAudio.Play();
                 Mgmt.startQuest(2);
                 break;
                 case 3:
@@ -83,6 +92,11 @@ public class movementPlayer : MonoBehaviour
             }
             Mgmt.InteraktId = -1;
 
+        }
+
+
+        if(!Input.anyKey) {
+            Foodsteps.Stop();
         }
 
     }
