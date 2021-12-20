@@ -8,28 +8,8 @@ using System.Linq;
 
 public class loginMinigame : MonoBehaviour
 {
-    //zeit in sec
-    //Start Timer : 3 2 1 Los
-    private double timerStart;
-
-    public Text timerTxt;
-
-    //Objekt disappear Time    
-    private double timeDis = 0.0f;
 
     private int score;
-    public Text scoreTxt;
-    public GameObject[] imgs;
-    public GameObject empty;
-    public Manager mgmt;
-
-    public Text infoText;
-
-    public GameObject startContainer;
-    public Text startCountdown;
-
-    public double uiTextTimer =  0;
-
 
     public GameObject userNameInput;
     public GameObject passwortInput;
@@ -37,69 +17,47 @@ public class loginMinigame : MonoBehaviour
     public string nachnameValue;
     public string passwortValue;
 
-    public Text nameTxt;
-    public Text vornameTxt;
-    public Text nachnameTxt;
-    public Text passwortTxt;
+    private Text nameTxt;
+    private Text vornameTxt;
+    private Text nachnameTxt;
+    private Text passwortTxt;
 
     private string rightUsername;
+    private string rightPassword;
 
     private bool correctData;
+    public Manager mgmt;
 
 
+
+    /// <summary>
+    /// Felix Programm New
+    /// </summary>
+
+    public GameObject[] scenen;
+    private int curSceneID;
+    private double uiTextTimer;
+    public Text infoText;
 
     void Start()
     {
         resetMg();
     }
     private void Update() {
-        //StartTimer
-
-        if(timerStart < 0.0f) {
-            //Warum wird das immer wieder ausgeführt
-            startContainer.SetActive(false);
-
-                
-                /*
-
-                    ---- Zeug für Update
-
-                */
-                if(uiTextTimer < 0.0f) {
-                    if(infoText.text != ""){
-                        infoText.text = "";
-                    }
-                    if(correctData == true){
-                        finishMinigame();
-                        resetMg();
-                    }
-                } 
-                else 
-                {
-                    uiTextTimer -= Time.deltaTime;
-                }
-
-
-
-
-                /*
-
-                    ---- Zeug für Update
-
-                */
-                
-
-                timerTxt.text = timeDis.ToString("0");
-
-                    
-
+       if(uiTextTimer < 0.0f) {
+            infoText.text = "";
         } else {
-            startCountdown.text = timerStart.ToString("0");
-            timerStart -= Time.deltaTime;
+            uiTextTimer -= Time.deltaTime;
         }
-        
     }
 
+
+    public void Start_mg_pc_login() {
+        curSceneID = Random.Range(0,2);
+        scenen[curSceneID].SetActive(true);
+        setLoginType();
+        
+    }
 
     public void setHardnessLvl(int hardnessValue){
        
@@ -112,17 +70,14 @@ public class loginMinigame : MonoBehaviour
 
     public void resetMg() {
         score = 0;
-        scoreTxt.text = "0";
         correctData = false;
         setLoginType();
-        timerStart = 1.0f;
-        timeDis = 30f;
-        valuesToUI();
+        //valuesToUI();
 
-            
+        for(int i = 0;i < scenen.Length - 1;i++) {
+            scenen[i].SetActive(false);
+        }
 
-        startContainer.SetActive(true);
-        //curImg = empty;
         this.gameObject.SetActive(false);
 
     }
@@ -131,6 +86,22 @@ public class loginMinigame : MonoBehaviour
     public void sumitBtn(){
         string inputName = userNameInput.GetComponent<InputField>().text;
         string inputPW = userNameInput.GetComponent<InputField>().text;
+        
+
+
+        if(inputName == rightUsername) {
+            if(inputPW == rightPassword) {
+                Debug.Log("Yes");
+                writetoUI("Richtig!",2f);
+                correctData = true;
+            } else {
+                writetoUI("Fehler!",1f);
+            }
+        } else {
+            writetoUI("Fehler!",1f);
+        }
+
+        /*
         if(inputName != null && inputName != "" && inputPW != null && inputPW != ""){
             if(inputName == rightUsername && inputPW == passwortValue){
                 writetoUI("Richtig!",2f);
@@ -143,55 +114,40 @@ public class loginMinigame : MonoBehaviour
         else{
             writetoUI("Fehler!",1f);
         }
-    }
+    
+        */
+        }
 
 
     public void setLoginType(){
-    
-        int t = Random.Range(0,3);
         // 0 = Moddle   Nachname.Vorname
         // 1 = Iserv    Vorname.Nachname
         // 2 = Window   Vorname.Nachname
-        switch(t){
+        switch(curSceneID){
             case 0:
                 rightUsername = nachnameValue + "." + vornameValue;
-                buildMoodle();
             break;
             case 1:
                 rightUsername = vornameValue + "." + nachnameValue;
-                buildIserv();
             break;
             case 2:
                 rightUsername = vornameValue + "." + nachnameValue;
-                buildWindows();
             break;
             default:
-            Debug.Log("What the fuckl happend");
+                Debug.Log("What the fuckl happend");
             break;
 
         }
     }
 
-    public void buildIserv(){
-        nameTxt.text = "Iserv";
-    }
 
-    public void buildMoodle(){
-        nameTxt.text = "Moodle";
-    }
-    
-    public void buildWindows(){
-        nameTxt.text = "Windows";
-    }
-
+    /*
     public void valuesToUI(){
         vornameTxt.text = vornameValue;
         nachnameTxt.text = nachnameValue;
         passwortTxt.text = passwortValue;
     }
-
-
-       
+      */  
 
     public void writetoUI(string ptext, float waittime){
         uiTextTimer = waittime;
