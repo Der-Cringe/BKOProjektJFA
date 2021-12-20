@@ -41,9 +41,12 @@ public class pcPluger : MonoBehaviour{
         }
         if(isDragging) {
             Vector3 mousePos = Input.mousePosition;
+            Target.transform.position = new Vector3(0,0,0);
             Target.transform.position = mousePos;
-            
+            Debug.Log("Mouse : " + mousePos.y);
+            Debug.Log("Target : " + Target.transform.position.y);
         }
+        
     }
     public void change_target_to_left() {
         Target = links;

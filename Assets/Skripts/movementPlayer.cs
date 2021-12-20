@@ -57,14 +57,17 @@ public class movementPlayer : MonoBehaviour
                 psstFunction();
             }
             
-        } else if(Input.GetKeyDown(KeyCode.E)) {
+        } else if(Input.GetKeyDown(KeyCode.E) && Mgmt.InteraktId >= 0) {
 
             switch (Mgmt.InteraktId){
-                case 1:
+                case 0:
                 Mgmt.doorMinigame();
                 break;
+                case 1:
+                Mgmt.startQuest(1);
+                break;
                 case 2:
-                Mgmt.startQuest();
+                Mgmt.startQuest(2);
                 break;
                 case 3:
                 Mgmt.quizabcMinigame();
@@ -74,32 +77,12 @@ public class movementPlayer : MonoBehaviour
                     Mgmt.windowMinigame();
                 }
                 break;
+                default:
+                Debug.Log("No");
+                break;
             }
-            /*
-            if(Mgmt.interaktiv[2]){
-                Mgmt.startQuest();
-            }
-            else
-             {
-                if(Mgmt.interaktiv[1]){
-                    Mgmt.doorMinigame();
-                }
-                else{
-                    if(Mgmt.interaktiv[3]){
-                        Mgmt.quizabcMinigame();
-                    }
-                    else{
-                        if(Mgmt.interaktiv[4]){
-                            if(Mgmt.windowClosed == true){
-                            Mgmt.windowMinigame();
-                            }
-                        }
-                        else{
+            Mgmt.InteraktId = -1;
 
-                        }
-                    }
-                }
-             }*/
         }
 
     }

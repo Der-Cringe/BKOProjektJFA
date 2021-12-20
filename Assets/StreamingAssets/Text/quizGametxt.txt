@@ -1,3 +1,8 @@
 Wie viele Schichten hat das Osi-Schichten Modell?;Sieben Schichten;Drei Schichten;Eine Schicht
 Auf welcher Osi-Schicht arbeitet ein Switch;Schicht drei;Schicht acht;Schicht zwei
 Wie viele Adresse passen in folgendes Netz 192.168.42.64 Maske:255.255.255.240;14 Adressen;8 Adressen;2 Adresse
+Was bedeutet DNS?;Domain Name System;Domain Name Service;Domain Name Server
+Was bedeutet DHCP?;Dynamic Host Configuration;Dynamic Host Controller;DDOS Heart Controllpanel
+Nenne die Korrekte Subnetzmaske: /12 ;255.240.0.0;255.248.0.0;255.255.254.0
+Was bedeutet IDE?;integrated development environment;interaktiv development environment;integrated developer exersises
+Wie definiert man ein Array in Java vom Typ Int;int[] arr = new int[5];int arr[] = new int[5];double[] arr = new double[5];

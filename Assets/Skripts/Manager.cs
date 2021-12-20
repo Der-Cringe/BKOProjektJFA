@@ -92,6 +92,7 @@ public class Manager:MonoBehaviour {
     ///         
     /// </summary>
     private void Start() {
+        InteraktId = -1;
         interaktiv = new bool[20];
         knowledgeValue = 0;
         setknowledgeSlider();
@@ -107,7 +108,6 @@ public class Manager:MonoBehaviour {
         SpawnPlayer();
         StudentsClass.SetActive(false);
         StudentsFloor.SetActive(true);
-
         start_deaktiv_UI();
         
         
@@ -198,14 +198,23 @@ public class Manager:MonoBehaviour {
         mgs[4].SetActive(true);
     }
 
-    public void startQuest() {
-        minigame();
+    public void startQuest(int i) {
+        if(i == 1) {
+            minigame_1();
+        }else if(i == 2) {
+            minigame_2();
+        } 
     }
-    private void minigame() {
+    private void minigame_1() {
         fullInGameUi.SetActive(false);
         mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
         mgs[1].SetActive(true);
     }
+    private void minigame_2() {
+        fullInGameUi.SetActive(false);
+        mgs[2].SetActive(true);
+    }
+
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
         fullInGameUi.SetActive(true);

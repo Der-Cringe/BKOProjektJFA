@@ -18,7 +18,7 @@ public class InterSkript:MonoBehaviour {
             //Debug.Log("dudewhat id "+ id + this.gameObject + interactRange + "Dies: "+Vector2.Distance(player.transform.position,this.transform.position));
             mgmt.interaktivSet(true,id);
         } else {
-            mgmt.interaktivSet(false,id);
+            mgmt.interaktivSet(false,-1);
         }
     }
 
