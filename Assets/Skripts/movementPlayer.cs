@@ -64,18 +64,16 @@ public class movementPlayer : MonoBehaviour
                 psstFunction();
             }
             
-        } else if(Input.GetKeyDown(KeyCode.E) && Mgmt.InteraktId >= 0) {
+        } else if(Input.GetKeyDown(KeyCode.E)) {
 
             switch (Mgmt.InteraktId){
                 case 0:
                 Mgmt.doorMinigame();
                 break;
                 case 1:
-                StartCountDownAudio.Play();
                 Mgmt.startQuest(1);
                 break;
                 case 2:
-                StartCountDownAudio.Play();
                 Mgmt.startQuest(2);
                 break;
                 case 3:
@@ -90,8 +88,6 @@ public class movementPlayer : MonoBehaviour
                 Debug.Log("No");
                 break;
             }
-            Mgmt.InteraktId = -1;
-
         }
 
 

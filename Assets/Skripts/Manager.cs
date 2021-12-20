@@ -15,7 +15,7 @@ public class Manager:MonoBehaviour {
     private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
 
     // Audio sources
-    public AudioSource Foodsteps;
+    
 
     ///<Variablen>
     ///     Player Objekt
@@ -93,7 +93,7 @@ public class Manager:MonoBehaviour {
     ///         
     /// </summary>
     private void Start() {
-        InteraktId = -1;
+        //InteraktId = -1;
         interaktiv = new bool[20];
         knowledgeValue = 0;
         setknowledgeSlider();
@@ -115,6 +115,13 @@ public class Manager:MonoBehaviour {
     
     }
     private void Update() {
+
+        for(int i = 0;i < interaktiv.Length-1;i++) {
+            if(interaktiv[i] == true) {
+                InteraktId = i;
+            }
+        }
+
         if(VolumeValue > DezibelSlider.maxValue) {
             VolumeValue = (int)DezibelSlider.maxValue;
         }else if(VolumeValue < 0) {
@@ -186,16 +193,19 @@ public class Manager:MonoBehaviour {
     public void doorMinigameOver() {
         mgs[0].SetActive(false);
         movetoClass();
+        interaktiv[InteraktId] = false;
         fullInGameUi.SetActive(true);
     }
 
     public void quizabcMinigame() {
         fullInGameUi.SetActive(false);
+        interaktiv[InteraktId] = false;
         mgs[3].SetActive(true);
     }
 
     public void windowMinigame() {
         fullInGameUi.SetActive(false);
+        interaktiv[InteraktId] = false;
         mgs[4].SetActive(true);
     }
 
@@ -219,6 +229,7 @@ public class Manager:MonoBehaviour {
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
         fullInGameUi.SetActive(true);
+        interaktiv[InteraktId] = false;
         // Setztung des Knowledge Wert aufbasis der Resultate des minigames
         knowledgeValue = knowledgeValue + uscore / 10;
 
@@ -273,9 +284,8 @@ public class Manager:MonoBehaviour {
     ///    Interaktiv Verwaltung 
     /// </summary>
     public void interaktivSet(bool a,int id) {
-        //interaktiv[id] = a;
-        if(a == true) {
-            InteraktId = id;
+        if(id > -1) {
+            interaktiv[id] = a;
         }
     }
 
