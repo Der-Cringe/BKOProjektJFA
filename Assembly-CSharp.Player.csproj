@@ -66,14 +66,17 @@
     <Compile Include="Assets\Skripts\doorMinigameScript.cs" />
     <Compile Include="Assets\Skripts\followTarget.cs" />
     <Compile Include="Assets\Skripts\gameEndskript.cs" />
+    <Compile Include="Assets\Skripts\loginMinigame.cs" />
     <Compile Include="Assets\Skripts\movementPlayer.cs" />
+    <Compile Include="Assets\Skripts\pcPluger.cs" />
     <Compile Include="Assets\Skripts\quizGameabc.cs" />
     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
     <Compile Include="Assets\Skripts\windowMinigame.cs" />
-    <Compile Include="Assets\pcPluger.cs" />
+    <Compile Include="Assets\cutscene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\Text\quizGametxt.txt" />
+    <None Include="Assets\License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
