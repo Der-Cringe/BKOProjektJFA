@@ -67,32 +67,15 @@
     <Compile Include="Assets\Skripts\followTarget.cs" />
     <Compile Include="Assets\Skripts\gameEndskript.cs" />
     <Compile Include="Assets\Skripts\movementPlayer.cs" />
+    <Compile Include="Assets\Skripts\quizGameabc.cs" />
     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
+    <Compile Include="Assets\Skripts\windowMinigame.cs" />
     <Compile Include="Assets\pcPluger.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
-     <Compile Include="Assets\Skripts\BtnSendStatus.cs" />
-     <Compile Include="Assets\Skripts\DoorFloor.cs" />
-     <Compile Include="Assets\Skripts\InterSkript.cs" />
-     <Compile Include="Assets\Skripts\KameraSettings.cs" />
-     <Compile Include="Assets\Skripts\Manager.cs" />
-     <Compile Include="Assets\Skripts\NPCskript.cs" />
-     <Compile Include="Assets\Skripts\PlaySkript.cs" />
-     <Compile Include="Assets\Skripts\StartstdSettingMg.cs" />
-     <Compile Include="Assets\Skripts\bubbleskript.cs" />
-     <Compile Include="Assets\Skripts\doorMinigameButton.cs" />
-     <Compile Include="Assets\Skripts\doorMinigameScript.cs" />
-     <Compile Include="Assets\Skripts\followTarget.cs" />
-     <Compile Include="Assets\Skripts\gameEndskript.cs" />
-     <Compile Include="Assets\Skripts\movementPlayer.cs" />
-     <Compile Include="Assets\Skripts\quizGameabc.cs" />
-     <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
-     <Compile Include="Assets\Skripts\windowMinigame.cs" />
-     <Compile Include="Assets\pcPluger.cs" />
-     <None Include="Assets\StreamingAssets\Text\quizGametxt.txt" />
->>>>>>> ef932116463cdc215a5d5826556b7f985502f43f
+    <None Include="Assets\StreamingAssets\Text\quizGametxt.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>F:\UnityHUB\2019.4.31f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

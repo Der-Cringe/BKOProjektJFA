@@ -2,15 +2,21 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BtnSendStatus
+    - DoorFloor
     - InterSkript
     - KameraSettings
     - Manager
     - NPCskript
     - PlaySkript
     - bubbleskript
+    - doorMinigameScript
     - followTarget
+    - gameEndskript
     - movementPlayer
+    - pcPluger
+    - quizGameabc
     - stdSettingMgSkript
+    - windowMinigame
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -63,39 +69,51 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11362}
+    - Class: 114
+      Script: {instanceID: 11460}
     - Class: 114
       Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11758}
+      Script: {instanceID: 11708}
     - Class: 114
-      Script: {instanceID: 12530}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12784}
+      Script: {instanceID: 12760}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 12800}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 13406}
+      Script: {instanceID: 13150}
     - Class: 114
-      Script: {instanceID: 14328}
+      Script: {instanceID: 13396}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 13432}
     - Class: 114
-      Script: {instanceID: 14802}
+      Script: {instanceID: 14190}
     - Class: 114
-      Script: {instanceID: 14958}
+      Script: {instanceID: 14364}
     - Class: 114
-      Script: {instanceID: 15010}
+      Script: {instanceID: 14378}
     - Class: 114
-      Script: {instanceID: 15078}
+      Script: {instanceID: 14384}
     - Class: 114
-      Script: {instanceID: 15134}
+      Script: {instanceID: 14846}
+    - Class: 114
+      Script: {instanceID: 14922}
+    - Class: 114
+      Script: {instanceID: 15004}
+    - Class: 114
+      Script: {instanceID: 15056}
+    - Class: 114
+      Script: {instanceID: 15124}
+    - Class: 114
+      Script: {instanceID: 15182}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -132,21 +150,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11362}
     - Class: 114
-      Script: {instanceID: 11758}
+      Script: {instanceID: 11708}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11908}
     - Class: 114
-      Script: {instanceID: 12530}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 13406}
+      Script: {instanceID: 13432}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 14378}
     - Class: 114
-      Script: {instanceID: 15078}
+      Script: {instanceID: 15124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,6 +182,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -226,6 +250,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 5356ef96b2b94f42fc4d86d32ea70519
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: doorMinigameScript
+  - hash:
+      serializedVersion: 2
       Hash: aeb62f729c52c814dec86c47dcac1471
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -250,12 +280,6 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -272,6 +296,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 4f5bdd0827f5473c04c9775c8112a5c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: quizGameabc
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -418,6 +448,18 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 5994f14a0b41e9f98e505de0b332c804
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartstdSettingMg
+  - hash:
+      serializedVersion: 2
+      Hash: e3a256f37d8cc490464e56c4dbd539cb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: pcPluger
+  - hash:
+      serializedVersion: 2
       Hash: 36bec16ed1158987f7d992f19ac65056
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -472,7 +514,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 4ab4c297f55cd028c10855a0c35a6ad2
+      Hash: 0de65456653bf652f465bb11e0274298
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -556,6 +598,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DoorFloor
+  - hash:
+      serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -580,6 +628,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: e54b76fabf32406ac7ed9b64cdc15ce6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: windowMinigame
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -596,6 +650,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 8a4d20d36da0b61bfde156502147143d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: doorMinigameButton
   - hash:
       serializedVersion: 2
       Hash: 895765eef9fd2f3f2c67f8beeda0d70a
@@ -616,6 +676,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: c2a2c9fa956010861edceddf6613501b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gameEndskript
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -628,7 +694,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 76d376cf09c43037e2e50289e99b8b14
+      Hash: d51256008bf0565540cc63f65a034e4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InterSkript

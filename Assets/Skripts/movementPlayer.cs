@@ -58,7 +58,24 @@ public class movementPlayer : MonoBehaviour
             }
             
         } else if(Input.GetKeyDown(KeyCode.E)) {
-                
+
+            switch (Mgmt.InteraktId){
+                case 1:
+                Mgmt.doorMinigame();
+                break;
+                case 2:
+                Mgmt.startQuest();
+                break;
+                case 3:
+                Mgmt.quizabcMinigame();
+                break;
+                case 4:
+                if(Mgmt.windowClosed == true) {
+                    Mgmt.windowMinigame();
+                }
+                break;
+            }
+            /*
             if(Mgmt.interaktiv[2]){
                 Mgmt.startQuest();
             }
@@ -82,7 +99,7 @@ public class movementPlayer : MonoBehaviour
                         }
                     }
                 }
-             }
+             }*/
         }
 
     }

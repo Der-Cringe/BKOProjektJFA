@@ -107,6 +107,8 @@ public class Manager:MonoBehaviour {
         SpawnPlayer();
         StudentsClass.SetActive(false);
         StudentsFloor.SetActive(true);
+
+        start_deaktiv_UI();
         
         
     
@@ -126,7 +128,7 @@ public class Manager:MonoBehaviour {
         }
 
         if(windowClosedCooldown <= 0){
-            Debug.Log("DaBinich" + ((int)(Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000));
+            //Debug.Log("DaBinich" + ((int)(Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000));
             windowClosed = true;
             stinkyValue += (int)((Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000);
         }
@@ -178,7 +180,12 @@ public class Manager:MonoBehaviour {
     /// 
     public void doorMinigame() {
         fullInGameUi.SetActive(false);
-        mgs[1].SetActive(true);
+        mgs[0].SetActive(true);
+    }
+    public void doorMinigameOver() {
+        mgs[0].SetActive(false);
+        movetoClass();
+        fullInGameUi.SetActive(true);
     }
 
     public void quizabcMinigame() {
@@ -196,8 +203,8 @@ public class Manager:MonoBehaviour {
     }
     private void minigame() {
         fullInGameUi.SetActive(false);
-        mgs[0].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
-        mgs[0].SetActive(true);
+        mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
+        mgs[1].SetActive(true);
     }
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
@@ -207,11 +214,7 @@ public class Manager:MonoBehaviour {
 
 
     }
-    public void doorMinigameOver(){
-        mgs[1].SetActive(false);
-        movetoClass();
-        fullInGameUi.SetActive(true);
-    }
+
 
     public void windowMinigameOver(){
         mgs[4].SetActive(false);
@@ -259,9 +262,11 @@ public class Manager:MonoBehaviour {
     /// <summary>
     ///    Interaktiv Verwaltung 
     /// </summary>
-    public void interaktivSet(bool a,GameObject b,int id) {
-        interaktiv[id] = a;
-
+    public void interaktivSet(bool a,int id) {
+        //interaktiv[id] = a;
+        if(a == true) {
+            InteraktId = id;
+        }
     }
 
 
@@ -296,8 +301,7 @@ public class Manager:MonoBehaviour {
 
 
     /// <summary>
-    ///     NPC Funktionen
-    ///     
+    ///     NPC Funktionen   
     /// </summary>
     private void makeNoises(int count) {
         for(int i = 0 ; i < count;i++ ) {
@@ -329,7 +333,12 @@ public class Manager:MonoBehaviour {
     {
         score = 0;
     }
-
+    private void start_deaktiv_UI() {
+        for(int i = 0;i < mgs.Length;i++) {
+            mgs[i].SetActive(false);
+        }
+        
+    }
     /// <summary>
     /// Scenen Management Funktionen
     /// </summary>
@@ -337,5 +346,8 @@ public class Manager:MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
+
 
 }
