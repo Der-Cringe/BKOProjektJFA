@@ -71,6 +71,16 @@ public class movementPlayer : MonoBehaviour
                     if(Mgmt.interaktiv[3]){
                         Mgmt.quizabcMinigame();
                     }
+                    else{
+                        if(Mgmt.interaktiv[4]){
+                            if(Mgmt.windowClosed == true){
+                            Mgmt.windowMinigame();
+                            }
+                        }
+                        else{
+
+                        }
+                    }
                 }
              }
         }

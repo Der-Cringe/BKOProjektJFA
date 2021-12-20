@@ -41,8 +41,16 @@ public class Manager:MonoBehaviour {
     /// </Variablen>
     private int VolumeValue;
     private int knowledgeValue;
+    private int stinkyValue;
+
+    public float windowClosedCooldown;
+
+    public bool windowClosed;
+
     public Slider DezibelSlider;
     public Slider knowledgeSlider;
+    public Slider stinkySlider;
+    public Slider focusSlider;
     public Text clockText;
     private int score;
 
@@ -87,8 +95,13 @@ public class Manager:MonoBehaviour {
         interaktiv = new bool[20];
         knowledgeValue = 0;
         setknowledgeSlider();
-        VolumeValue         = 20;
+        VolumeValue         = 10;
         setDezibelSlider();
+        stinkyValue         = 650;
+        windowClosed        = true;
+        windowClosedCooldown = 0;
+        setStinkySlider();
+        setFocusSlider();
         nextDezibelUp       = 0;
         randomNpcDezCount   = 0;
         SpawnPlayer();
@@ -104,7 +117,28 @@ public class Manager:MonoBehaviour {
         }else if(VolumeValue < 0) {
             VolumeValue = 0;
         }
+
+
+        if(stinkyValue > stinkySlider.maxValue) {
+            stinkyValue = (int)stinkySlider.maxValue;
+        }else if(stinkyValue < 0) {
+            stinkyValue = 0;
+        }
+
+        if(windowClosedCooldown <= 0){
+            Debug.Log("DaBinich" + ((int)(Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000));
+            windowClosed = true;
+            stinkyValue += (int)((Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000);
+        }
+        else{
+            windowClosedCooldown -= Time.deltaTime;
+        }
+
+
+
         setDezibelSlider();
+        setStinkySlider();
+        setFocusSlider();
         setknowledgeSlider();
         setTime();
 
@@ -151,6 +185,12 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         mgs[3].SetActive(true);
     }
+
+    public void windowMinigame() {
+        fullInGameUi.SetActive(false);
+        mgs[4].SetActive(true);
+    }
+
     public void startQuest() {
         minigame();
     }
@@ -172,6 +212,16 @@ public class Manager:MonoBehaviour {
         movetoClass();
         fullInGameUi.SetActive(true);
     }
+
+    public void windowMinigameOver(){
+        mgs[4].SetActive(false);
+        fullInGameUi.SetActive(true);
+        stinkyValue = 0;
+        windowClosedCooldown = 30;
+        windowClosed = false;
+    }
+
+
      public void quizabcMinigameOver(int score){
         mgs[3].SetActive(false);
         knowledgeValue = knowledgeValue + score / 10;
@@ -196,6 +246,14 @@ public class Manager:MonoBehaviour {
     }
     void setDezibelSlider() {
         DezibelSlider.value = VolumeValue;
+    }
+
+    void setFocusSlider() {
+        focusSlider.value = 100 - (VolumeValue/2 + (stinkyValue/10)/2);
+    }
+
+    void setStinkySlider() {
+        stinkySlider.value = stinkyValue;
     }
 
     /// <summary>
