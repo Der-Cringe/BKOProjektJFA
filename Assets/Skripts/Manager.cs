@@ -188,12 +188,12 @@ public class Manager:MonoBehaviour {
     /// 
     public void doorMinigame() {
         fullInGameUi.SetActive(false);
+        interaktiv[InteraktId] = false;
         mgs[0].SetActive(true);
     }
     public void doorMinigameOver() {
         mgs[0].SetActive(false);
         movetoClass();
-        interaktiv[InteraktId] = false;
         fullInGameUi.SetActive(true);
     }
 
@@ -207,6 +207,12 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         interaktiv[InteraktId] = false;
         mgs[4].SetActive(true);
+    }
+
+    public void loginMinigame() {
+        fullInGameUi.SetActive(false);
+        interaktiv[InteraktId] = false;
+        mgs[5].SetActive(true);
     }
 
     public void startQuest(int i) {
@@ -244,6 +250,12 @@ public class Manager:MonoBehaviour {
         windowClosedCooldown = 30;
         windowClosed = false;
     }
+
+    public void loginMinigameOver(){
+        mgs[5].SetActive(false);
+        fullInGameUi.SetActive(true);
+    }
+
 
 
      public void quizabcMinigameOver(int score){

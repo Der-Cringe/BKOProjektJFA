@@ -68,21 +68,24 @@ public class movementPlayer : MonoBehaviour
 
             switch (Mgmt.InteraktId){
                 case 0:
-                Mgmt.doorMinigame();
+                    Mgmt.doorMinigame();
                 break;
                 case 1:
-                Mgmt.startQuest(1);
+                    Mgmt.startQuest(1);
                 break;
                 case 2:
-                Mgmt.startQuest(2);
+                    Mgmt.startQuest(2);
                 break;
                 case 3:
-                Mgmt.quizabcMinigame();
+                    Mgmt.quizabcMinigame();
                 break;
                 case 4:
                 if(Mgmt.windowClosed == true) {
                     Mgmt.windowMinigame();
                 }
+                break;
+                case 5:
+                    Mgmt.loginMinigame();
                 break;
                 default:
                 Debug.Log("No");
