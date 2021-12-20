@@ -17,11 +17,11 @@ public class pcPluger : MonoBehaviour{
     public GameObject Kabel;
     public GameObject Kabel_transparent;
     private bool isDragging;
-    public AudioSource StartCountDownAudio;
+    
     void Start() {
         this.gameObject.SetActive(false);
         Target = empty;
-        StartCountDownAudio.Play();
+        
     }
 
 
