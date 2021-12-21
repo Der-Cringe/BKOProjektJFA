@@ -80,6 +80,12 @@ public class Manager:MonoBehaviour {
     private double nextDezibelUp;
     private int randomNpcDezCount;    ///     Muss ist zukunft nicht Random sein
 
+    //  Variablen
+    //      Pc Plug
+    //  Variablen
+
+    public bool pcStuck;
+
 
 
     /// <summary>
@@ -94,6 +100,7 @@ public class Manager:MonoBehaviour {
     /// </summary>
     private void Start() {
         //InteraktId = -1;
+        pcStuck = false;
         interaktiv = new bool[20];
         InteraktId = -1;
         knowledgeValue = 0;
@@ -232,10 +239,16 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         mgs[2].SetActive(true);
     }
+    public void pcStuckEnd()
+    {
+        pcStuck = true;
+        mgs[2].SetActive(false);
+        fullInGameUi.SetActive(true);
+        interaktiv[InteraktId] = false;
+    }
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
         fullInGameUi.SetActive(true);
-        interaktiv[InteraktId] = false;
         // Setztung des Knowledge Wert aufbasis der Resultate des minigames
         knowledgeValue = knowledgeValue + uscore / 10;
         interaktiv[InteraktId] = false;

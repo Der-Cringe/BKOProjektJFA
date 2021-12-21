@@ -74,7 +74,11 @@ public class movementPlayer : MonoBehaviour
                     Mgmt.startQuest(1);
                 break;
                 case 2:
-                    Mgmt.startQuest(2);
+                    if(Mgmt.pcStuck == false)
+                    {
+                        Mgmt.startQuest(2);
+                    }
+                    
                 break;
                 case 3:
                     Mgmt.quizabcMinigame();
