@@ -95,6 +95,7 @@ public class Manager:MonoBehaviour {
     private void Start() {
         //InteraktId = -1;
         interaktiv = new bool[20];
+        InteraktId = -1;
         knowledgeValue = 0;
         setknowledgeSlider();
         VolumeValue         = 10;
@@ -199,13 +200,13 @@ public class Manager:MonoBehaviour {
 
     public void quizabcMinigame() {
         fullInGameUi.SetActive(false);
-        interaktiv[InteraktId] = false;
         mgs[3].SetActive(true);
+        
+
     }
 
     public void windowMinigame() {
         fullInGameUi.SetActive(false);
-        interaktiv[InteraktId] = false;
         mgs[4].SetActive(true);
     }
 
@@ -224,25 +225,23 @@ public class Manager:MonoBehaviour {
     }
     private void minigame_1() {
         fullInGameUi.SetActive(false);
-        mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl(VolumeValue);
+        mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl(getFocus());
         mgs[1].SetActive(true);
     }
     private void minigame_2() {
         fullInGameUi.SetActive(false);
         mgs[2].SetActive(true);
     }
-
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
         fullInGameUi.SetActive(true);
         interaktiv[InteraktId] = false;
         // Setztung des Knowledge Wert aufbasis der Resultate des minigames
         knowledgeValue = knowledgeValue + uscore / 10;
+        interaktiv[InteraktId] = false;
 
 
     }
-
-
     public void windowMinigameOver(){
         mgs[4].SetActive(false);
         fullInGameUi.SetActive(true);
@@ -285,7 +284,11 @@ public class Manager:MonoBehaviour {
     }
 
     void setFocusSlider() {
-        focusSlider.value = 100 - (VolumeValue/2 + (stinkyValue/10)/2);
+        focusSlider.value = 100 - (VolumeValue / 2 + (stinkyValue / 10) / 2);
+    }
+    private int getFocus()
+    {
+        return 100 - (VolumeValue / 2 + (stinkyValue / 10) / 2);
     }
 
     void setStinkySlider() {
@@ -296,9 +299,7 @@ public class Manager:MonoBehaviour {
     ///    Interaktiv Verwaltung 
     /// </summary>
     public void interaktivSet(bool a,int id) {
-        if(id > -1) {
             interaktiv[id] = a;
-        }
     }
 
 

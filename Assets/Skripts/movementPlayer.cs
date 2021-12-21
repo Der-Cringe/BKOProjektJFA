@@ -65,7 +65,7 @@ public class movementPlayer : MonoBehaviour
             }
             
         } else if(Input.GetKeyDown(KeyCode.E)) {
-
+           
             switch (Mgmt.InteraktId){
                 case 0:
                     Mgmt.doorMinigame();

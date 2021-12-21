@@ -21,6 +21,7 @@ public class stdSettingMgSkript : MonoBehaviour
 
     private int score;
     public GameObject[] imgs;
+    public int[] ids;
     public GameObject empty;
     private GameObject curImg;
 
@@ -53,19 +54,17 @@ public class stdSettingMgSkript : MonoBehaviour
                 timer -= Time.deltaTime;
                 //PictureTimer
                 if(timeDis < 0.0f) {
+                    Debug.Log(nextPictureTimer);
                     timeDis = nextPictureTimer;
                     clicked = false;
                     do{
                     rn = Random.Range(0,imgs.Length);
                     }
                     while(imgs[rn] == curImg);
-                    
-                    rn = Random.Range(0,imgs.Length);
+
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
-                    
-
                 } else {
                     timeDis -= Time.deltaTime;
                 }
@@ -78,16 +77,19 @@ public class stdSettingMgSkript : MonoBehaviour
     }
 
     public void setHardnessLvl(int hardnessValue){
-        nextPictureTimer -= nextPictureTimer* (hardnessValue  / 50);
+
+        nextPictureTimer = hardnessValue  / 10  ;
+        if(nextPictureTimer > 5)
+        {
+            nextPictureTimer = 5;
+        }
+        Debug.Log(hardnessValue);
     }
 
     public void pressInfo(int num) {
         if(clicked == false) {
-
-            Debug.Log(num);
-            Debug.Log(rn);
-            if(rn == num) {
-                score += 10;
+            if(ids[rn] == num) {
+                score += 30;
             }
             clicked = true;
         } else {

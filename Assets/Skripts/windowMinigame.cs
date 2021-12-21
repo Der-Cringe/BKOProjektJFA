@@ -88,7 +88,7 @@ public class windowMinigame : MonoBehaviour
 
         startContainer.SetActive(true);
         //curImg = empty;
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
 
     }
 
