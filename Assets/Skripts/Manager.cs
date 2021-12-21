@@ -207,6 +207,7 @@ public class Manager:MonoBehaviour {
 
     public void quizabcMinigame() {
         fullInGameUi.SetActive(false);
+        interaktiv[InteraktId] = false;
         mgs[3].SetActive(true);
         
 

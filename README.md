@@ -24,3 +24,17 @@ Erste Level:
  6.Das Spielen gibt einem Bildung, die Menge ist abhängig davon wie gut man ein Minispiel abschließt
    -> Minigames geben Bildung aufhaltende Spiele verbrauchen einfach nur zeit und verhindern Bildung zu bekommen
  
+
+
+Was steht noch an:
+
+
+Ablauf Tür, login oder kabel, games  (  Login funktion  )
+Option: Restart pause options + Zahnrad icon
+Balancing Score + Hardness level shit einbauen?
+
+
+
+
+Man könnte machen:
+Lockscreen automatisch nach 30sekunden
