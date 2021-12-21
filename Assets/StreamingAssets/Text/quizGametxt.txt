@@ -1,8 +1,21 @@
 Wie viele Schichten hat das Osi-Schichten Modell?;Sieben Schichten;Drei Schichten;Eine Schicht
-Auf welcher Osi-Schicht arbeitet ein Switch;Schicht drei;Schicht acht;Schicht zwei
+Auf welcher Osi-Schicht arbeitet ein Switch;Schicht zwei;Schicht acht;Schicht drei
 Wie viele Adresse passen in folgendes Netz 192.168.42.64 Maske:255.255.255.240;14 Adressen;8 Adressen;2 Adresse
 Was bedeutet DNS?;Domain Name System;Domain Name Service;Domain Name Server
 Was bedeutet DHCP?;Dynamic Host Configuration;Dynamic Host Controller;DDOS Heart Controllpanel
 Nenne die Korrekte Subnetzmaske: /12 ;255.240.0.0;255.248.0.0;255.255.254.0
 Was bedeutet IDE?;integrated development environment;interaktiv development environment;integrated developer exersises
 Wie definiert man ein Array in Java vom Typ Int;int[] arr = new int[5];int arr[] = new int[5];double[] arr = new double[5];
+Was ist ein dedizierter Server?;Ein Rechner auf dem ausschließlich Server-Programme laufen;Ein Server der nur einem Zweck zugeordnet ist;Ein Rechner auf dem Clients Server-Programme nutzen können
+Was bedeutet „On-Premises“?;„auf dem Gelände“ Nutzungs- und Lizenzmodell für Serverbasierte Computerprogramme;„als Versprechen“ Nutzungs- und Lizenzmodell für Cloud-Dienste;„auf dem vorausgeschickten“ Nutzungs- und Lizenzmodell für Netzwerkdienste
+Wofür steht die Abkürzung „TCP“?;Transmission Control Protocol;Transmission Center Protocol;Transsession Control Protocol
+Was ist ein „Provider?;Internetdienstanbieter;Zulieferer;LAN-Kabel
+Wofür steht die Abkürzung „UDP“?;User Datagram Protocol;Union Datagram Protocol;Using Datastructure Protocol
+Womit können Programmablaufdiagramme erstellt werden?;UML;UDP;TCP
+Wofür steht die Abkürzung bei „ER“-Diagrammen?;Entity Relationship;Eternity Relative;ERROR
+Aus wie vielen Oktetten besteht eine IPv4-Adressen?;Vier;Zwei;Acht
+Auf welcher Schicht arbeitet standardmäßig ein Switch?;Sicherungsschicht;Transportschicht;Bitübertragungsschicht;Darstellungsschicht;Netzwerkschicht;Anwendungsschicht
+Wie nennt man ein Netzwerk, welches sich nur um wenige Meter erstreckt?;LAN;WAN;GAN;PAN
+Wie lässt sich die Netzwerklast bei Multimediastreams reduzieren?;Verwendung von Broadcast;Verwendung von Unicast;Verwendung von mehrere Server (Cluster);Verwendung von Multicast
+Welcher Dienst vergibt die Netzwerkkonfiguration an Geräten?;POP3;ARP;FTP;DNS;DHCP
+Bei welcher IEEE-Norm handelt sich um WLAN?;IEEE 802.3;IEEE 802.15;IEEE-802.11;IEEE 802.5

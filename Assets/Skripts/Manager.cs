@@ -29,6 +29,10 @@ public class Manager:MonoBehaviour {
     public Transform SpawnPointClassPos;
     public GameObject StudentsClass;
     public GameObject StudentsFloor;
+    public GameObject goldenPc;
+    public GameObject goldenLogin;
+    public GameObject goldenPaper;
+    public GameObject blueCable;
 
 
     /// <Variablen>
@@ -40,13 +44,16 @@ public class Manager:MonoBehaviour {
     /// <Variablen>
     ///     Ui Single Elemente
     /// </Variablen>
-    private int VolumeValue;
+    private double VolumeValue;
     private int knowledgeValue;
-    private int stinkyValue;
+    private double stinkyValue;
 
     public float windowClosedCooldown;
 
     public bool windowClosed;
+
+    public bool logindone;
+
 
     public Slider DezibelSlider;
     public Slider knowledgeSlider;
@@ -101,11 +108,14 @@ public class Manager:MonoBehaviour {
     private void Start() {
         //InteraktId = -1;
         pcStuck = false;
+        logindone = false;
         interaktiv = new bool[20];
+        blueCable.SetActive(false);
+        goldenPaper.SetActive(false);
         InteraktId = -1;
         knowledgeValue = 0;
         setknowledgeSlider();
-        VolumeValue         = 10;
+        VolumeValue         = 650;
         setDezibelSlider();
         stinkyValue         = 650;
         windowClosed        = true;
@@ -125,20 +135,25 @@ public class Manager:MonoBehaviour {
     private void Update() {
 
         for(int i = 0;i < interaktiv.Length-1;i++) {
-            if(interaktiv[i] == true) {
+            if(interaktiv[i] == true && i != 5) {
                 InteraktId = i;
+            }
+            else{
+                if(interaktiv[5] == true && logindone == false){
+                    InteraktId = 5;
+                }
             }
         }
 
         if(VolumeValue > DezibelSlider.maxValue) {
-            VolumeValue = (int)DezibelSlider.maxValue;
+            VolumeValue = DezibelSlider.maxValue;
         }else if(VolumeValue < 0) {
             VolumeValue = 0;
         }
 
 
         if(stinkyValue > stinkySlider.maxValue) {
-            stinkyValue = (int)stinkySlider.maxValue;
+            stinkyValue = stinkySlider.maxValue;
         }else if(stinkyValue < 0) {
             stinkyValue = 0;
         }
@@ -146,11 +161,13 @@ public class Manager:MonoBehaviour {
         if(windowClosedCooldown <= 0){
             //Debug.Log("DaBinich" + ((int)(Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000));
             windowClosed = true;
-            stinkyValue += (int)((Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 80000);
+            stinkyValue += ((Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 8000);
         }
         else{
             windowClosedCooldown -= Time.deltaTime;
         }
+
+        VolumeValue += ((Time.deltaTime / REAL_SECONDS_PER_INGAME_DAY) * 8000);
 
 
 
@@ -160,13 +177,13 @@ public class Manager:MonoBehaviour {
         setknowledgeSlider();
         setTime();
 
-        if(nextDezibelUp < 0.0f) {
-            nextDezibelUp = Random.Range(1,8);
-            randomNpcDezCount = Random.Range(2,6);
-            makeNoises(randomNpcDezCount);
-        } else {
-            nextDezibelUp -= Time.deltaTime;
-        }
+        // if(nextDezibelUp < 0.0f) {
+        //     nextDezibelUp = Random.Range(1,8);
+        //     randomNpcDezCount = Random.Range(2,6);
+        //     makeNoises(randomNpcDezCount);
+        // } else {
+        //     nextDezibelUp -= Time.deltaTime;
+        // }
 
         
     }
@@ -233,7 +250,7 @@ public class Manager:MonoBehaviour {
     }
     private void minigame_1() {
         fullInGameUi.SetActive(false);
-        mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl(getFocus());
+        mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl((int)getFocus());
         mgs[1].SetActive(true);
     }
     private void minigame_2() {
@@ -265,6 +282,7 @@ public class Manager:MonoBehaviour {
     }
 
     public void loginMinigameOver(){
+        logindone = true;
         mgs[5].SetActive(false);
         fullInGameUi.SetActive(true);
     }
@@ -290,23 +308,23 @@ public class Manager:MonoBehaviour {
     public void removeVolumeValue(int newVal) {
         VolumeValue -= newVal;
     }
-    public int getVolumeValue() {
+    public double getVolumeValue() {
         return VolumeValue;
     }
     void setDezibelSlider() {
-        DezibelSlider.value = VolumeValue;
+        DezibelSlider.value = (float)VolumeValue;
     }
 
     void setFocusSlider() {
-        focusSlider.value = 100 - (VolumeValue / 2 + (stinkyValue / 10) / 2);
+        focusSlider.value = 100 - (((float)VolumeValue / 10) / 2 + ((float)stinkyValue / 10) / 2);
     }
-    private int getFocus()
+    private float getFocus()
     {
-        return 100 - (VolumeValue / 2 + (stinkyValue / 10) / 2);
+        return 100 - (((float)VolumeValue / 10) / 2 + ((float)stinkyValue / 10) / 2);
     }
 
     void setStinkySlider() {
-        stinkySlider.value = stinkyValue;
+        stinkySlider.value = (float)stinkyValue;
     }
 
     /// <summary>
@@ -350,16 +368,16 @@ public class Manager:MonoBehaviour {
     /// <summary>
     ///     NPC Funktionen   
     /// </summary>
-    private void makeNoises(int count) {
-        for(int i = 0 ; i < count;i++ ) {
-            NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
-            if(tmpSkript.picked == false) {
-                tmpSkript.picked = true;
-                AddVolumeValue(Random.Range(0,6));
-                tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
-            }
-        }
-    }
+    // private void makeNoises(int count) {
+    //     for(int i = 0 ; i < count;i++ ) {
+    //         NPCskript tmpSkript = npcs[Random.Range(0,npcs.Length - 1)].GetComponent<NPCskript>();
+    //         if(tmpSkript.picked == false) {
+    //             tmpSkript.picked = true;
+    //             AddVolumeValue(Random.Range(0,6));
+    //             tmpSkript.talk(talkingBubbles[Random.Range(0,talkingBubbles.Length-1)]);
+    //         }
+    //     }
+    // }
   
     
     /// <summary>

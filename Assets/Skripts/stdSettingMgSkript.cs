@@ -35,6 +35,8 @@ public class stdSettingMgSkript : MonoBehaviour
     public Text startCountdown;
 
     public float nextPictureTimer = 1.0f;
+    public float textTimer;
+    public Text textForTimer;
 
     void Start()
     {
@@ -43,6 +45,12 @@ public class stdSettingMgSkript : MonoBehaviour
     private void Update() {
         //StartTimer
         if(timerStart < 0.0f) {
+            if(textTimer < 0.0f){
+                
+            }
+            else {
+                textTimer -= Time.deltaTime;
+            }
             startContainer.SetActive(false);
             timerTxt.text = timer.ToString("00");
             //GameTimer
@@ -54,7 +62,20 @@ public class stdSettingMgSkript : MonoBehaviour
                 timer -= Time.deltaTime;
                 //PictureTimer
                 if(timeDis < 0.0f) {
-                    Debug.Log(nextPictureTimer);
+                    nextPicture();
+                } else {
+                    timeDis -= Time.deltaTime;
+                }
+            }
+        } else {
+            startCountdown.text = timerStart.ToString("0");
+            timerStart -= Time.deltaTime;
+        }
+        scoreText.text = score.ToString("0");
+    }
+
+    public void nextPicture(){
+        Debug.Log(nextPictureTimer);
                     timeDis = nextPictureTimer;
                     clicked = false;
                     do{
@@ -65,15 +86,6 @@ public class stdSettingMgSkript : MonoBehaviour
                     curImg.SetActive(false);
                     imgs[rn].SetActive(true);
                     curImg = imgs[rn];
-                } else {
-                    timeDis -= Time.deltaTime;
-                }
-            }
-        } else {
-            startCountdown.text = timerStart.ToString("0");
-            timerStart -= Time.deltaTime;
-        }
-        scoreText.text = score.ToString("0");
     }
 
     public void setHardnessLvl(int hardnessValue){
@@ -90,6 +102,15 @@ public class stdSettingMgSkript : MonoBehaviour
         if(clicked == false) {
             if(ids[rn] == num) {
                 score += 30;
+                textForTimer.text = "Right!";
+                textTimer = 0.25f;
+                timeDis = 0;
+            }
+            else{
+                score -= 30;
+                textForTimer.text = "Wrong!";
+                textTimer = 0.25f;
+                timeDis = 0;
             }
             clicked = true;
         } else {

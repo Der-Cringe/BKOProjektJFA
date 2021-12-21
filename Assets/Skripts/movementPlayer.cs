@@ -71,17 +71,29 @@ public class movementPlayer : MonoBehaviour
                     Mgmt.doorMinigame();
                 break;
                 case 1:
+                    if(Mgmt.logindone && Mgmt.pcStuck){
+                    Mgmt.goldenPaper.SetActive(false);
                     Mgmt.startQuest(1);
+                    }
                 break;
                 case 2:
                     if(Mgmt.pcStuck == false)
                     {
+                        if(Mgmt.logindone == true){
+                            Mgmt.goldenPaper.SetActive(true);
+                            Mgmt.goldenLogin.SetActive(true);
+                        }
+                        Mgmt.goldenPc.SetActive(false);
+                        Mgmt.blueCable.SetActive(true);
                         Mgmt.startQuest(2);
                     }
                     
                 break;
                 case 3:
-                    Mgmt.quizabcMinigame();
+                    if(Mgmt.logindone && Mgmt.pcStuck){
+                        Mgmt.goldenLogin.SetActive(false);
+                        Mgmt.quizabcMinigame();
+                    }
                 break;
                 case 4:
                 if(Mgmt.windowClosed == true) {
@@ -89,7 +101,15 @@ public class movementPlayer : MonoBehaviour
                 }
                 break;
                 case 5:
-                    Mgmt.loginMinigame();
+                    if(Mgmt.logindone == false){
+                        if(Mgmt.pcStuck == true){
+                            Mgmt.goldenPaper.SetActive(true);
+                        }
+                        else{
+                            Mgmt.goldenLogin.SetActive(false);
+                        }
+                        Mgmt.loginMinigame();
+                    }
                 break;
                 default:
                 Debug.Log("No");
@@ -107,7 +127,7 @@ public class movementPlayer : MonoBehaviour
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
     private void psstFunction() {
-        this.Mgmt.removeVolumeValue(20);
+        this.Mgmt.removeVolumeValue(200);
         PsstCoolDown = 5.0f;
     }
 }
