@@ -33,6 +33,8 @@ public class Manager:MonoBehaviour {
     public GameObject goldenLogin;
     public GameObject goldenPaper;
     public GameObject blueCable;
+    public GameObject pauseWindow;
+    public GameObject optionsWindow;
 
 
     /// <Variablen>
@@ -93,6 +95,8 @@ public class Manager:MonoBehaviour {
 
     public bool pcStuck;
 
+    public bool pausedOpened;
+
 
 
     /// <summary>
@@ -109,9 +113,12 @@ public class Manager:MonoBehaviour {
         //InteraktId = -1;
         pcStuck = false;
         logindone = false;
+        pausedOpened = false;
         interaktiv = new bool[20];
         blueCable.SetActive(false);
         goldenPaper.SetActive(false);
+        pauseWindow.SetActive(false);
+        optionsWindow.SetActive(false);
         InteraktId = -1;
         knowledgeValue = 0;
         setknowledgeSlider();
@@ -412,6 +419,35 @@ public class Manager:MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+
+    public void resume() {
+        pausedOpened = false;
+        pauseWindow.SetActive(false);
+        optionsWindow.SetActive(false);
+        Time.timeScale = 1f; // normal ist 1f
+    }
+
+    public void Options(){
+        pauseWindow.SetActive(false);
+        optionsWindow.SetActive(true);
+    }
+
+    public void backToStart(){
+        pauseWindow.SetActive(true);
+        optionsWindow.SetActive(false);
+    }
+
+    public void pauseGame(){
+        if(!pausedOpened){
+        pausedOpened = true;
+        pauseWindow.SetActive(true);
+        Time.timeScale = 0f;
+        }
+    }
+
+    public void Quit(){
+        Application.Quit();
+    }
 
 
 

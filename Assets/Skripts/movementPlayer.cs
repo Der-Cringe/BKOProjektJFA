@@ -63,6 +63,10 @@ public class movementPlayer : MonoBehaviour
             if(PsstCoolDown <= 0) {
                 psstFunction();
             }
+        }
+
+        else if(Input.GetKeyDown(KeyCode.Escape)) {
+           Mgmt.pauseGame();
             
         } else if(Input.GetKeyDown(KeyCode.E)) {
            

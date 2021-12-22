@@ -1,7 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - BtnSendStatus
     - DoorFloor
     - InterSkript
     - KameraSettings
@@ -29,6 +28,11 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -38,11 +42,16 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/main.unity:
     - Class: 1
@@ -90,13 +99,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12760}
+      Script: {instanceID: 12762}
     - Class: 114
-      Script: {instanceID: 12800}
+      Script: {instanceID: 12802}
     - Class: 114
-      Script: {instanceID: 12806}
-    - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 12808}
     - Class: 114
       Script: {instanceID: 13396}
     - Class: 114
@@ -156,6 +163,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -167,15 +176,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11708}
     - Class: 114
+      Script: {instanceID: 11714}
+    - Class: 114
       Script: {instanceID: 11908}
+    - Class: 114
+      Script: {instanceID: 12352}
     - Class: 114
       Script: {instanceID: 12546}
     - Class: 114
+      Script: {instanceID: 12616}
+    - Class: 114
+      Script: {instanceID: 12978}
+    - Class: 114
       Script: {instanceID: 13432}
+    - Class: 114
+      Script: {instanceID: 13876}
+    - Class: 114
+      Script: {instanceID: 13898}
     - Class: 114
       Script: {instanceID: 14378}
     - Class: 114
+      Script: {instanceID: 14712}
+    - Class: 114
+      Script: {instanceID: 15088}
+    - Class: 114
       Script: {instanceID: 15126}
+    - Class: 114
+      Script: {instanceID: 15154}
+    - Class: 114
+      Script: {instanceID: 15184}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -230,15 +259,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12806}
+      Script: {instanceID: 12648}
+    - Class: 114
+      Script: {instanceID: 12808}
     - Class: 114
       Script: {instanceID: 14378}
     - Class: 114
       Script: {instanceID: 14848}
     - Class: 114
       Script: {instanceID: 15126}
-    - Class: 114
-      Script: {instanceID: 27774}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -386,7 +415,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 57f2c6d6ff1bbff865deb1fc2b144998
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlaySkript
@@ -518,6 +547,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 1cbe93922005efb2a0db63f69fd7f678
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: cutscene
+  - hash:
+      serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -530,7 +565,7 @@ ScriptsOnlyBuild:
     className: StartstdSettingMg
   - hash:
       serializedVersion: 2
-      Hash: e3a256f37d8cc490464e56c4dbd539cb
+      Hash: 28ec7a4cbd190e93364b0c5fec595dcc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pcPluger
@@ -566,12 +601,6 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 7c2c1e9c54868432e3a5a7ab3328fdad
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BtnSendStatus
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -590,7 +619,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 0de65456653bf652f465bb11e0274298
+      Hash: 61030fb511990a2e13dcf7b01bcc6bad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -716,7 +745,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 47546232d309b30092ee2e3b5dbcaf92
+      Hash: eb27ccc24ebd316301d771c98f670a03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: loginMinigame
@@ -800,7 +829,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: 55011c941a9a7e06968e3d8b555b7227
+      Hash: 4894571ce3b99fc675795d8e30e3b37d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: stdSettingMgSkript
@@ -858,15 +887,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 1cbe93922005efb2a0db63f69fd7f678
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: cutscene
   platform: 19
   scenePathNames:
   - Assets/Scenes/menu.unity
   - Assets/Scenes/tutorialScene.unity
   - Assets/Scenes/main.unity
-  playerPath: E:/Repo/BKOProjektJFA/Builds/Test Build/Schoolproject.exe
+  playerPath: C:/Users/josef/Downloads/Test/Schoolproject.exe
