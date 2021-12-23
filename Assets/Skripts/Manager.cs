@@ -12,7 +12,7 @@ public class Manager:MonoBehaviour {
     //  Private Section
     //  Value that Contains the curretn Dezibel Value
     //  We use this to Controll the dezibel Slider
-    private const float REAL_SECONDS_PER_INGAME_DAY = 600f;
+    private const float REAL_SECONDS_PER_INGAME_DAY = 1200f;
 
     // Audio sources
     
@@ -96,6 +96,7 @@ public class Manager:MonoBehaviour {
     public bool pcStuck;
 
     public bool pausedOpened;
+    public Text HighscoreValue;
 
 
 
@@ -140,16 +141,21 @@ public class Manager:MonoBehaviour {
     
     }
     private void Update() {
-
+        bool allnull = true;
         for(int i = 0;i < interaktiv.Length-1;i++) {
             if(interaktiv[i] == true && i != 5) {
                 InteraktId = i;
+                allnull = false;
             }
             else{
                 if(interaktiv[5] == true && logindone == false){
                     InteraktId = 5;
+                    allnull = false;
                 }
             }
+        }
+        if(allnull == true){
+            InteraktId = -1;
         }
 
         if(VolumeValue > DezibelSlider.maxValue) {
@@ -227,14 +233,15 @@ public class Manager:MonoBehaviour {
         mgs[0].SetActive(false);
         movetoClass();
         fullInGameUi.SetActive(true);
+        PlayerPrefs.SetInt("doorsopened",PlayerPrefs.GetInt("doorsopened",0) + 1);
+  
     }
 
     public void quizabcMinigame() {
         fullInGameUi.SetActive(false);
         interaktiv[InteraktId] = false;
         mgs[3].SetActive(true);
-        
-
+        PlayerPrefs.SetInt("quizplayed",PlayerPrefs.GetInt("quizplayed",0) + 1);
     }
 
     public void windowMinigame() {
@@ -259,6 +266,7 @@ public class Manager:MonoBehaviour {
         fullInGameUi.SetActive(false);
         mgs[1].GetComponent<stdSettingMgSkript>().setHardnessLvl((int)getFocus());
         mgs[1].SetActive(true);
+        PlayerPrefs.SetInt("osireactplayed",PlayerPrefs.GetInt("osireactplayed",0) + 1);
     }
     private void minigame_2() {
         fullInGameUi.SetActive(false);
@@ -270,6 +278,9 @@ public class Manager:MonoBehaviour {
         mgs[2].SetActive(false);
         fullInGameUi.SetActive(true);
         interaktiv[InteraktId] = false;
+        PlayerPrefs.SetInt("monitorsteck",PlayerPrefs.GetInt("monitorsteck",0) + 1);
+
+      
     }
     public void sendResultsToMgmt(int uscore) {
         mgs[currentMg].SetActive(false);
@@ -286,12 +297,17 @@ public class Manager:MonoBehaviour {
         stinkyValue = 0;
         windowClosedCooldown = 30;
         windowClosed = false;
+        PlayerPrefs.SetInt("windowsopened",PlayerPrefs.GetInt("windowsopened",0) + 1);
     }
 
     public void loginMinigameOver(){
         logindone = true;
         mgs[5].SetActive(false);
         fullInGameUi.SetActive(true);
+        PlayerPrefs.SetInt("eingeloged",PlayerPrefs.GetInt("eingeloged",0) + 1);
+
+
+             
     }
 
 
@@ -368,6 +384,14 @@ public class Manager:MonoBehaviour {
     public void gameTimeEnd() {
         day = 0.3128f;
         score = knowledgeValue;
+        if(knowledgeValue > PlayerPrefs.GetInt("highscore",0)){
+            PlayerPrefs.SetInt("highscore",knowledgeValue);
+        }
+        HighscoreValue.text = PlayerPrefs.GetInt("highscore",0) + "%";
+        PlayerPrefs.SetInt("gamesplayed",PlayerPrefs.GetInt("gamesplayed",0) + 1);
+        PlayerPrefs.SetInt("timeplayed",PlayerPrefs.GetInt("timeplayed",0) + 6);
+        PlayerPrefs.SetInt("lastgame",knowledgeValue);
+    
         AgainScreen.SetActive(true);
     }
 
@@ -416,7 +440,7 @@ public class Manager:MonoBehaviour {
     /// </summary>
     public void restart_game()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("menu");
     }
 
 

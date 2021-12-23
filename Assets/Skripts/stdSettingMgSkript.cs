@@ -95,6 +95,9 @@ public class stdSettingMgSkript : MonoBehaviour
         {
             nextPictureTimer = 5;
         }
+        if(nextPictureTimer <= 0){
+            nextPictureTimer = 1;
+        }
         Debug.Log(hardnessValue);
     }
 
@@ -107,11 +110,16 @@ public class stdSettingMgSkript : MonoBehaviour
                 timeDis = 0;
             }
             else{
-                score -= 30;
+                score -= 60;
                 textForTimer.text = "Wrong!";
                 textTimer = 0.25f;
                 timeDis = 0;
             }
+
+            if(score < 0){
+                score = 0;
+            }
+
             clicked = true;
         } else {
         }
@@ -121,6 +129,7 @@ public class stdSettingMgSkript : MonoBehaviour
     public void resetMg() {
         clicked = false;
         score = 0;
+        textForTimer.text = "";
         startContainer.SetActive(true);
         timerStart = 3.0f;
         curImg = empty;

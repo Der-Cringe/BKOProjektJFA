@@ -54,6 +54,7 @@
      <Compile Include="Assets\Skripts\quizGameabc.cs" />
      <Compile Include="Assets\Skripts\stdSettingMgSkript.cs" />
      <Compile Include="Assets\Skripts\windowMinigame.cs" />
+     <Compile Include="Assets\VolumeControll.cs" />
      <Compile Include="Assets\cutscene.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

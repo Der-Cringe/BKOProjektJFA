@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Manager
     - NPCskript
     - PlaySkript
+    - VolumeControll
     - bubbleskript
     - cutscene
     - doorMinigameScript
@@ -33,6 +34,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -85,53 +94,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11726}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 12546}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12762}
+      Script: {instanceID: 12378}
     - Class: 114
-      Script: {instanceID: 12802}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12788}
     - Class: 114
-      Script: {instanceID: 13396}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 13804}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 14190}
+      Script: {instanceID: 13422}
     - Class: 114
-      Script: {instanceID: 14364}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 13830}
     - Class: 114
-      Script: {instanceID: 14384}
+      Script: {instanceID: 14216}
     - Class: 114
-      Script: {instanceID: 14442}
+      Script: {instanceID: 14390}
     - Class: 114
-      Script: {instanceID: 14848}
+      Script: {instanceID: 14404}
     - Class: 114
-      Script: {instanceID: 14924}
+      Script: {instanceID: 14410}
     - Class: 114
-      Script: {instanceID: 15006}
+      Script: {instanceID: 14468}
     - Class: 114
-      Script: {instanceID: 15058}
+      Script: {instanceID: 14874}
     - Class: 114
-      Script: {instanceID: 15126}
+      Script: {instanceID: 14950}
     - Class: 114
-      Script: {instanceID: 15184}
+      Script: {instanceID: 15032}
+    - Class: 114
+      Script: {instanceID: 15084}
+    - Class: 114
+      Script: {instanceID: 15114}
+    - Class: 114
+      Script: {instanceID: 15152}
+    - Class: 114
+      Script: {instanceID: 15180}
+    - Class: 114
+      Script: {instanceID: 15210}
+    - Class: 114
+      Script: {instanceID: 31756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -149,6 +170,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/menu.unity:
     - Class: 1
@@ -170,41 +197,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11714}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11934}
     - Class: 114
-      Script: {instanceID: 12352}
+      Script: {instanceID: 12378}
     - Class: 114
-      Script: {instanceID: 12546}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12978}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13876}
+      Script: {instanceID: 13902}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14404}
     - Class: 114
-      Script: {instanceID: 14712}
+      Script: {instanceID: 14738}
     - Class: 114
-      Script: {instanceID: 15088}
+      Script: {instanceID: 15114}
     - Class: 114
-      Script: {instanceID: 15126}
+      Script: {instanceID: 15152}
     - Class: 114
-      Script: {instanceID: 15154}
+      Script: {instanceID: 15180}
     - Class: 114
-      Script: {instanceID: 15184}
+      Script: {instanceID: 15210}
+    - Class: 114
+      Script: {instanceID: 31756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -220,6 +249,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/tutorialScene.unity:
     - Class: 1
@@ -249,25 +284,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 12546}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12648}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14404}
     - Class: 114
-      Script: {instanceID: 14848}
+      Script: {instanceID: 14874}
     - Class: 114
-      Script: {instanceID: 15126}
+      Script: {instanceID: 15152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -415,7 +450,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 57f2c6d6ff1bbff865deb1fc2b144998
+      Hash: 398291b5065dab1d7478eda566709391
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlaySkript
@@ -565,7 +600,7 @@ ScriptsOnlyBuild:
     className: StartstdSettingMg
   - hash:
       serializedVersion: 2
-      Hash: 28ec7a4cbd190e93364b0c5fec595dcc
+      Hash: 2841ccb2ffc827cc704836abfa43d956
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pcPluger
@@ -619,7 +654,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 61030fb511990a2e13dcf7b01bcc6bad
+      Hash: a10bac94202e2fb0e44c635666c9cc41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -887,9 +922,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 85e80f3cdf6ce9fe08f92d49eb4133f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VolumeControll
   platform: 19
   scenePathNames:
   - Assets/Scenes/menu.unity
   - Assets/Scenes/tutorialScene.unity
   - Assets/Scenes/main.unity
-  playerPath: C:/Users/josef/Downloads/Test/Schoolproject.exe
+  playerPath: C:/Users/josef/Downloads/FullVersion(nicht)/Schoolproject.exe

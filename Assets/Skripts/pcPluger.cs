@@ -25,10 +25,13 @@ public class pcPluger : MonoBehaviour{
 
     private bool[] check;
 
+    public float rangeOfClick;
+
     public double uiTextTimer;
     public Text infoText;
     void Start() {
         check = new bool[2];
+        rangeOfClick  = 40f;
         uiTextTimer = 2.0f;
         Target = empty; 
         check[0] = false;
@@ -70,9 +73,9 @@ public class pcPluger : MonoBehaviour{
                 Debug.Log(id);
                if(id == 0)
                 {
-                    if (links.transform.position.x <= buchse_2.transform.position.x + 30 && links.transform.position.x >= buchse_2.transform.position.x - 30)
+                    if (links.transform.position.x <= buchse_2.transform.position.x + rangeOfClick && links.transform.position.x >= buchse_2.transform.position.x - rangeOfClick)
                     {
-                        if (links.transform.position.y <= buchse_2.transform.position.y + 30 && links.transform.position.y >= buchse_2.transform.position.y - 30)
+                        if (links.transform.position.y <= buchse_2.transform.position.y + rangeOfClick && links.transform.position.y >= buchse_2.transform.position.y - rangeOfClick)
                         {
                             Debug.Log("JOSEF STINKT SO MIES NACH KACKE Links");
                             check[1] = true;
@@ -81,9 +84,9 @@ public class pcPluger : MonoBehaviour{
                 }
                 else if(id == 1)
                 {
-                    if (rechts.transform.position.x <= buchse_1.transform.position.x + 30 && rechts.transform.position.x >= buchse_1.transform.position.x - 30)
+                    if (rechts.transform.position.x <= buchse_1.transform.position.x + rangeOfClick && rechts.transform.position.x >= buchse_1.transform.position.x - rangeOfClick)
                     {
-                        if (rechts.transform.position.y <= buchse_1.transform.position.y + 30 && rechts.transform.position.y >= buchse_1.transform.position.y - 30)
+                        if (rechts.transform.position.y <= buchse_1.transform.position.y + rangeOfClick && rechts.transform.position.y >= buchse_1.transform.position.y - rangeOfClick)
                         {
                         Debug.Log("JOSEF STINKT SO MIES NACH KACKE Rechts");
                             check[0] = true;
