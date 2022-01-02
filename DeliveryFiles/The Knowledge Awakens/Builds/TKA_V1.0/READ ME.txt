@@ -1,0 +1,3 @@
+Projektarbeit Version 1.0
+
+schliess das Spiel mit Alt-F4
