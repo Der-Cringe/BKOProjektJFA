@@ -38,3 +38,11 @@ Balancing Score + Hardness level shit einbauen?
 
 Man könnte machen:
 Lockscreen automatisch nach 30sekunden
+
+
+
+
+
+Downloadbar auf Itch.io :
+
+https://der-cringe.itch.io/bko-simulator
